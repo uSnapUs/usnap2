@@ -1,1160 +1,708 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>17EEFA691BAA45DCA086AA0C</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Pods-uSnapTests-resources.sh"
-</string>
-		</dict>
-		<key>376550DBAE3C465CB7AE8C79</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-uSnapTests.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>4E5D9F6DA4674C21904548E4</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>libPods.a</string>
-			<key>path</key>
-			<string>libPods.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>5A4ADC7916B4F9F70048A9A0</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5A4ADC8E16B4F9F70048A9A0</string>
-				<string>5A4ADCB516B4F9F90048A9A0</string>
-				<string>5A4ADC8716B4F9F70048A9A0</string>
-				<string>5A4ADC8516B4F9F70048A9A0</string>
-				<string>667F068FFB2C4983B9B14694</string>
-				<string>FFB968B7770C41E5860D2501</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A4ADC7B16B4F9F70048A9A0</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastUpgradeCheck</key>
-				<string>0450</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>uSnap Holdings Ltd</string>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>5A4ADC7E16B4F9F70048A9A0</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>5A4ADC7916B4F9F70048A9A0</string>
-			<key>productRefGroup</key>
-			<string>5A4ADC8516B4F9F70048A9A0</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>5A4ADC8316B4F9F70048A9A0</string>
-				<string>5A4ADCAD16B4F9F90048A9A0</string>
-			</array>
-		</dict>
-		<key>5A4ADC7E16B4F9F70048A9A0</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>5A4ADCBE16B4F9FA0048A9A0</string>
-				<string>5A4ADCBF16B4F9FA0048A9A0</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>5A4ADC8016B4F9F70048A9A0</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>5A4ADC9516B4F9F80048A9A0</string>
-				<string>5A4ADC9916B4F9F90048A9A0</string>
-				<string>5A4ADCA516B4F9F90048A9A0</string>
-				<string>5A4ADCA816B4F9F90048A9A0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>5A4ADC8116B4F9F70048A9A0</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>5A4ADC8916B4F9F70048A9A0</string>
-				<string>5A4ADC8B16B4F9F70048A9A0</string>
-				<string>5A4ADC8D16B4F9F70048A9A0</string>
-				<string>7D4A2298556840DABBAE08FF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>5A4ADC8216B4F9F70048A9A0</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>5A4ADC9316B4F9F80048A9A0</string>
-				<string>5A4ADC9B16B4F9F90048A9A0</string>
-				<string>5A4ADC9D16B4F9F90048A9A0</string>
-				<string>5A4ADC9F16B4F9F90048A9A0</string>
-				<string>5A4ADCA216B4F9F90048A9A0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>5A4ADC8316B4F9F70048A9A0</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>5A4ADCC016B4F9FA0048A9A0</string>
-			<key>buildPhases</key>
-			<array>
-				<string>5A4ADC8016B4F9F70048A9A0</string>
-				<string>5A4ADC8116B4F9F70048A9A0</string>
-				<string>5A4ADC8216B4F9F70048A9A0</string>
-				<string>E670AFC96F3444E890C675DA</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>uSnap</string>
-			<key>productName</key>
-			<string>uSnap</string>
-			<key>productReference</key>
-			<string>5A4ADC8416B4F9F70048A9A0</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>5A4ADC8416B4F9F70048A9A0</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>uSnap.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>5A4ADC8516B4F9F70048A9A0</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5A4ADC8416B4F9F70048A9A0</string>
-				<string>5A4ADCAE16B4F9F90048A9A0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A4ADC8716B4F9F70048A9A0</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5A4ADC8816B4F9F70048A9A0</string>
-				<string>5A4ADC8A16B4F9F70048A9A0</string>
-				<string>5A4ADC8C16B4F9F70048A9A0</string>
-				<string>5A4ADCAF16B4F9F90048A9A0</string>
-				<string>376550DBAE3C465CB7AE8C79</string>
-				<string>4E5D9F6DA4674C21904548E4</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A4ADC8816B4F9F70048A9A0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>UIKit.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/UIKit.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>5A4ADC8916B4F9F70048A9A0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A4ADC8816B4F9F70048A9A0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5A4ADC8A16B4F9F70048A9A0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>5A4ADC8B16B4F9F70048A9A0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A4ADC8A16B4F9F70048A9A0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5A4ADC8C16B4F9F70048A9A0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>CoreGraphics.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/CoreGraphics.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>5A4ADC8D16B4F9F70048A9A0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A4ADC8C16B4F9F70048A9A0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5A4ADC8E16B4F9F70048A9A0</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5A4ADC9716B4F9F80048A9A0</string>
-				<string>5A4ADC9816B4F9F90048A9A0</string>
-				<string>5A4ADCA016B4F9F90048A9A0</string>
-				<string>5A4ADCA316B4F9F90048A9A0</string>
-				<string>5A4ADCA416B4F9F90048A9A0</string>
-				<string>5A4ADCA616B4F9F90048A9A0</string>
-				<string>5A4ADCA716B4F9F90048A9A0</string>
-				<string>5A4ADC8F16B4F9F80048A9A0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>uSnap</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A4ADC8F16B4F9F80048A9A0</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5A4ADC9016B4F9F80048A9A0</string>
-				<string>5A4ADC9116B4F9F80048A9A0</string>
-				<string>5A4ADC9416B4F9F80048A9A0</string>
-				<string>5A4ADC9616B4F9F80048A9A0</string>
-				<string>5A4ADC9A16B4F9F90048A9A0</string>
-				<string>5A4ADC9C16B4F9F90048A9A0</string>
-				<string>5A4ADC9E16B4F9F90048A9A0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A4ADC9016B4F9F80048A9A0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>uSnap-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A4ADC9116B4F9F80048A9A0</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5A4ADC9216B4F9F80048A9A0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A4ADC9216B4F9F80048A9A0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A4ADC9316B4F9F80048A9A0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A4ADC9116B4F9F80048A9A0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5A4ADC9416B4F9F80048A9A0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>main.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A4ADC9516B4F9F80048A9A0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A4ADC9416B4F9F80048A9A0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5A4ADC9616B4F9F80048A9A0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>uSnap-Prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A4ADC9716B4F9F80048A9A0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>AppDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A4ADC9816B4F9F90048A9A0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>AppDelegate.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A4ADC9916B4F9F90048A9A0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A4ADC9816B4F9F90048A9A0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5A4ADC9A16B4F9F90048A9A0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>Default.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A4ADC9B16B4F9F90048A9A0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A4ADC9A16B4F9F90048A9A0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5A4ADC9C16B4F9F90048A9A0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>Default@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A4ADC9D16B4F9F90048A9A0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A4ADC9C16B4F9F90048A9A0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5A4ADC9E16B4F9F90048A9A0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>Default-568h@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A4ADC9F16B4F9F90048A9A0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A4ADC9E16B4F9F90048A9A0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5A4ADCA016B4F9F90048A9A0</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5A4ADCA116B4F9F90048A9A0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>MainStoryboard.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A4ADCA116B4F9F90048A9A0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/MainStoryboard.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A4ADCA216B4F9F90048A9A0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A4ADCA016B4F9F90048A9A0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5A4ADCA316B4F9F90048A9A0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>MasterViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A4ADCA416B4F9F90048A9A0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>MasterViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A4ADCA516B4F9F90048A9A0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A4ADCA416B4F9F90048A9A0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5A4ADCA616B4F9F90048A9A0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>DetailViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A4ADCA716B4F9F90048A9A0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>DetailViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A4ADCA816B4F9F90048A9A0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A4ADCA716B4F9F90048A9A0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5A4ADCA916B4F9F90048A9A0</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>5A4ADCD716B4FAAB0048A9A0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>5A4ADCAA16B4F9F90048A9A0</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>5A4ADCB016B4F9F90048A9A0</string>
-				<string>5A4ADCB116B4F9F90048A9A0</string>
-				<string>5A4ADCB216B4F9F90048A9A0</string>
-				<string>8993A7ED9C9045B69D11E3A2</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>5A4ADCAB16B4F9F90048A9A0</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>5A4ADCBA16B4F9FA0048A9A0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>5A4ADCAC16B4F9F90048A9A0</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string># Run the unit tests in this test bundle.
-"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests"
-</string>
-		</dict>
-		<key>5A4ADCAD16B4F9F90048A9A0</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>5A4ADCC316B4F9FA0048A9A0</string>
-			<key>buildPhases</key>
-			<array>
-				<string>5A4ADCA916B4F9F90048A9A0</string>
-				<string>5A4ADCAA16B4F9F90048A9A0</string>
-				<string>5A4ADCAB16B4F9F90048A9A0</string>
-				<string>5A4ADCAC16B4F9F90048A9A0</string>
-				<string>17EEFA691BAA45DCA086AA0C</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>5A4ADCB416B4F9F90048A9A0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>uSnapTests</string>
-			<key>productName</key>
-			<string>uSnapTests</string>
-			<key>productReference</key>
-			<string>5A4ADCAE16B4F9F90048A9A0</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle</string>
-		</dict>
-		<key>5A4ADCAE16B4F9F90048A9A0</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>uSnapTests.octest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>5A4ADCAF16B4F9F90048A9A0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>SenTestingKit.framework</string>
-			<key>path</key>
-			<string>Library/Frameworks/SenTestingKit.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>5A4ADCB016B4F9F90048A9A0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A4ADCAF16B4F9F90048A9A0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5A4ADCB116B4F9F90048A9A0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A4ADC8816B4F9F70048A9A0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5A4ADCB216B4F9F90048A9A0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A4ADC8A16B4F9F70048A9A0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5A4ADCB316B4F9F90048A9A0</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>5A4ADC7B16B4F9F70048A9A0</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>5A4ADC8316B4F9F70048A9A0</string>
-			<key>remoteInfo</key>
-			<string>uSnap</string>
-		</dict>
-		<key>5A4ADCB416B4F9F90048A9A0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>5A4ADC8316B4F9F70048A9A0</string>
-			<key>targetProxy</key>
-			<string>5A4ADCB316B4F9F90048A9A0</string>
-		</dict>
-		<key>5A4ADCB516B4F9F90048A9A0</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5A4ADCB616B4F9F90048A9A0</string>
-				<string>5A4ADCD616B4FAAB0048A9A0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>uSnapTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A4ADCB616B4F9F90048A9A0</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5A4ADCB716B4F9F90048A9A0</string>
-				<string>5A4ADCB816B4F9FA0048A9A0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A4ADCB716B4F9F90048A9A0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>uSnapTests-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A4ADCB816B4F9FA0048A9A0</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5A4ADCB916B4F9FA0048A9A0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A4ADCB916B4F9FA0048A9A0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A4ADCBA16B4F9FA0048A9A0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A4ADCB816B4F9FA0048A9A0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5A4ADCBE16B4F9FA0048A9A0</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>6.0</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET[arch=*]</key>
-				<string>6.0</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>5A4ADCBF16B4F9FA0048A9A0</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>6.0</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET[arch=*]</key>
-				<string>6.0</string>
-				<key>OTHER_CFLAGS</key>
-				<string>-DNS_BLOCK_ASSERTIONS=1</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>5A4ADCC016B4F9FA0048A9A0</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>5A4ADCC116B4F9FA0048A9A0</string>
-				<string>5A4ADCC216B4F9FA0048A9A0</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>5A4ADCC116B4F9FA0048A9A0</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>FFB968B7770C41E5860D2501</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>uSnap/uSnap-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>uSnap/uSnap-Info.plist</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>5.0</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>5A4ADCC216B4F9FA0048A9A0</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>FFB968B7770C41E5860D2501</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>uSnap/uSnap-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>uSnap/uSnap-Info.plist</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>5.0</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>5A4ADCC316B4F9FA0048A9A0</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>5A4ADCC416B4F9FA0048A9A0</string>
-				<string>5A4ADCC516B4F9FA0048A9A0</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>5A4ADCC416B4F9FA0048A9A0</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>667F068FFB2C4983B9B14694</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/uSnap.app/uSnap</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>"$(SDKROOT)/Developer/Library/Frameworks"</string>
-					<string>"$(DEVELOPER_LIBRARY_DIR)/Frameworks"</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>uSnap/uSnap-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>uSnapTests/uSnapTests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>octest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>5A4ADCC516B4F9FA0048A9A0</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>667F068FFB2C4983B9B14694</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/uSnap.app/uSnap</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>"$(SDKROOT)/Developer/Library/Frameworks"</string>
-					<string>"$(DEVELOPER_LIBRARY_DIR)/Frameworks"</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>uSnap/uSnap-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>uSnapTests/uSnapTests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>octest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>5A4ADCD616B4FAAB0048A9A0</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>MathSpec.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5A4ADCD716B4FAAB0048A9A0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A4ADCD616B4FAAB0048A9A0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>667F068FFB2C4983B9B14694</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-uSnapTests.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Pods-uSnapTests.xcconfig</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>7D4A2298556840DABBAE08FF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>4E5D9F6DA4674C21904548E4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>8993A7ED9C9045B69D11E3A2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>376550DBAE3C465CB7AE8C79</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>E670AFC96F3444E890C675DA</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Pods-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>1</string>
-		</dict>
-		<key>FFB968B7770C41E5860D2501</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Pods.xcconfig</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>5A4ADC7B16B4F9F70048A9A0</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0AA6EDFFD9A64B9BA6B0E827 /* libPods-uSnap (Integration Tests).a in Frameworks */ = {isa = PBXBuildFile; fileRef = E49094CD208145CEB1CCF459 /* libPods-uSnap (Integration Tests).a */; };
+		5A01E36916B666A000F636D7 /* navigation_specs.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A01E36816B666A000F636D7 /* navigation_specs.m */; };
+		5A4ADC8916B4F9F70048A9A0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A4ADC8816B4F9F70048A9A0 /* UIKit.framework */; };
+		5A4ADC8B16B4F9F70048A9A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A4ADC8A16B4F9F70048A9A0 /* Foundation.framework */; };
+		5A4ADC8D16B4F9F70048A9A0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A4ADC8C16B4F9F70048A9A0 /* CoreGraphics.framework */; };
+		5A4ADC9316B4F9F80048A9A0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A4ADC9116B4F9F80048A9A0 /* InfoPlist.strings */; };
+		5A4ADC9516B4F9F80048A9A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4ADC9416B4F9F80048A9A0 /* main.m */; };
+		5A4ADC9916B4F9F90048A9A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4ADC9816B4F9F90048A9A0 /* AppDelegate.m */; };
+		5A4ADC9B16B4F9F90048A9A0 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A4ADC9A16B4F9F90048A9A0 /* Default.png */; };
+		5A4ADC9D16B4F9F90048A9A0 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A4ADC9C16B4F9F90048A9A0 /* Default@2x.png */; };
+		5A4ADC9F16B4F9F90048A9A0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A4ADC9E16B4F9F90048A9A0 /* Default-568h@2x.png */; };
+		5A4ADCB016B4F9F90048A9A0 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A4ADCAF16B4F9F90048A9A0 /* SenTestingKit.framework */; };
+		5A4ADCB116B4F9F90048A9A0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A4ADC8816B4F9F70048A9A0 /* UIKit.framework */; };
+		5A4ADCB216B4F9F90048A9A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A4ADC8A16B4F9F70048A9A0 /* Foundation.framework */; };
+		5A4ADCBA16B4F9FA0048A9A0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A4ADCB816B4F9FA0048A9A0 /* InfoPlist.strings */; };
+		5AE41FD416BFA2D1008BAAED /* Phone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AE41FD316BFA2D1008BAAED /* Phone.storyboard */; };
+		5AE41FD716BFA48A008BAAED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4ADC9416B4F9F80048A9A0 /* main.m */; };
+		5AE41FD816BFA48A008BAAED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4ADC9816B4F9F90048A9A0 /* AppDelegate.m */; };
+		5AE41FDA16BFA48A008BAAED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A4ADC8816B4F9F70048A9A0 /* UIKit.framework */; };
+		5AE41FDB16BFA48A008BAAED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A4ADC8A16B4F9F70048A9A0 /* Foundation.framework */; };
+		5AE41FDC16BFA48A008BAAED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A4ADC8C16B4F9F70048A9A0 /* CoreGraphics.framework */; };
+		5AE41FDF16BFA48A008BAAED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A4ADC9116B4F9F80048A9A0 /* InfoPlist.strings */; };
+		5AE41FE016BFA48A008BAAED /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A4ADC9A16B4F9F90048A9A0 /* Default.png */; };
+		5AE41FE116BFA48A008BAAED /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A4ADC9C16B4F9F90048A9A0 /* Default@2x.png */; };
+		5AE41FE216BFA48A008BAAED /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A4ADC9E16B4F9F90048A9A0 /* Default-568h@2x.png */; };
+		5AE41FE316BFA48A008BAAED /* Phone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AE41FD316BFA2D1008BAAED /* Phone.storyboard */; };
+		5AE41FEA16BFA4C5008BAAED /* KIFTestStep+GlobalSteps.h in Sources */ = {isa = PBXBuildFile; fileRef = 5AE41FD016BF9F4C008BAAED /* KIFTestStep+GlobalSteps.h */; };
+		5AE41FEB16BFA4C5008BAAED /* KIFTestStep+GlobalSteps.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE41FD116BF9F4C008BAAED /* KIFTestStep+GlobalSteps.m */; };
+		5AE41FEC16BFA4C5008BAAED /* uSnapIntegrationTests-Info.plist in Sources */ = {isa = PBXBuildFile; fileRef = 5AE41FB916BF97F4008BAAED /* uSnapIntegrationTests-Info.plist */; };
+		5AE41FED16BFA4C5008BAAED /* uSnapIntegrationTests-Prefix.pch in Sources */ = {isa = PBXBuildFile; fileRef = 5AE41FC016BF97F4008BAAED /* uSnapIntegrationTests-Prefix.pch */; };
+		5AE41FEE16BFA4C5008BAAED /* USTestController.h in Sources */ = {isa = PBXBuildFile; fileRef = 5AE41FC616BF992F008BAAED /* USTestController.h */; };
+		5AE41FEF16BFA4C5008BAAED /* USTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE41FC716BF992F008BAAED /* USTestController.m */; };
+		5AE41FF016BFA4C5008BAAED /* KIFTestScenario+USScenarios.h in Sources */ = {isa = PBXBuildFile; fileRef = 5AE41FC916BF9A08008BAAED /* KIFTestScenario+USScenarios.h */; };
+		5AE41FF116BFA4C5008BAAED /* KIFTestScenario+USScenarios.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE41FCA16BF9A08008BAAED /* KIFTestScenario+USScenarios.m */; };
+		7D4A2298556840DABBAE08FF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5D9F6DA4674C21904548E4 /* libPods.a */; };
+		8993A7ED9C9045B69D11E3A2 /* libPods-uSnapTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 376550DBAE3C465CB7AE8C79 /* libPods-uSnapTests.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5A4ADCB316B4F9F90048A9A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A4ADC7B16B4F9F70048A9A0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A4ADC8316B4F9F70048A9A0;
+			remoteInfo = uSnap;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		24D5E18A3E3A46A19B8904CA /* libPods-uSnapIntegrationTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-uSnapIntegrationTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		376550DBAE3C465CB7AE8C79 /* libPods-uSnapTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-uSnapTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E5D9F6DA4674C21904548E4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		58E0AFE150214FB19172B435 /* Pods-uSnapIntegrationTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uSnapIntegrationTests.xcconfig"; path = "Pods/Pods-uSnapIntegrationTests.xcconfig"; sourceTree = SOURCE_ROOT; };
+		5A01E36816B666A000F636D7 /* navigation_specs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = navigation_specs.m; sourceTree = "<group>"; };
+		5A4ADC8416B4F9F70048A9A0 /* uSnap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uSnap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A4ADC8816B4F9F70048A9A0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5A4ADC8A16B4F9F70048A9A0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5A4ADC8C16B4F9F70048A9A0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5A4ADC9016B4F9F80048A9A0 /* uSnap-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "uSnap-Info.plist"; sourceTree = "<group>"; };
+		5A4ADC9216B4F9F80048A9A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5A4ADC9416B4F9F80048A9A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5A4ADC9616B4F9F80048A9A0 /* uSnap-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "uSnap-Prefix.pch"; sourceTree = "<group>"; };
+		5A4ADC9716B4F9F80048A9A0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5A4ADC9816B4F9F90048A9A0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5A4ADC9A16B4F9F90048A9A0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		5A4ADC9C16B4F9F90048A9A0 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		5A4ADC9E16B4F9F90048A9A0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		5A4ADCAE16B4F9F90048A9A0 /* uSnapTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = uSnapTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A4ADCAF16B4F9F90048A9A0 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		5A4ADCB716B4F9F90048A9A0 /* uSnapTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "uSnapTests-Info.plist"; sourceTree = "<group>"; };
+		5A4ADCB916B4F9FA0048A9A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5AE41FAD16BF9734008BAAED /* uSnapTests copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "uSnapTests copy-Info.plist"; path = "/Volumes/Storage/Projects/usnap2/app/uSnapTests copy-Info.plist"; sourceTree = "<absolute>"; };
+		5AE41FB916BF97F4008BAAED /* uSnapIntegrationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "uSnapIntegrationTests-Info.plist"; sourceTree = "<group>"; };
+		5AE41FBB16BF97F4008BAAED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5AE41FC016BF97F4008BAAED /* uSnapIntegrationTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "uSnapIntegrationTests-Prefix.pch"; sourceTree = "<group>"; };
+		5AE41FC616BF992F008BAAED /* USTestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USTestController.h; sourceTree = "<group>"; };
+		5AE41FC716BF992F008BAAED /* USTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USTestController.m; sourceTree = "<group>"; };
+		5AE41FC916BF9A08008BAAED /* KIFTestScenario+USScenarios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KIFTestScenario+USScenarios.h"; sourceTree = "<group>"; };
+		5AE41FCA16BF9A08008BAAED /* KIFTestScenario+USScenarios.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KIFTestScenario+USScenarios.m"; sourceTree = "<group>"; };
+		5AE41FD016BF9F4C008BAAED /* KIFTestStep+GlobalSteps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "KIFTestStep+GlobalSteps.h"; path = "TestSteps/KIFTestStep+GlobalSteps.h"; sourceTree = "<group>"; };
+		5AE41FD116BF9F4C008BAAED /* KIFTestStep+GlobalSteps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "KIFTestStep+GlobalSteps.m"; path = "TestSteps/KIFTestStep+GlobalSteps.m"; sourceTree = "<group>"; };
+		5AE41FD316BFA2D1008BAAED /* Phone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Phone.storyboard; sourceTree = "<group>"; };
+		5AE41FE816BFA48A008BAAED /* uSnap (Integration Tests).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "uSnap (Integration Tests).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AE41FE916BFA48A008BAAED /* uSnap copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "uSnap copy-Info.plist"; path = "/Volumes/Storage/Projects/usnap2/app/uSnap copy-Info.plist"; sourceTree = "<absolute>"; };
+		667F068FFB2C4983B9B14694 /* Pods-uSnapTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uSnapTests.xcconfig"; path = "Pods/Pods-uSnapTests.xcconfig"; sourceTree = SOURCE_ROOT; };
+		B48EB41E629848E1B7D9F769 /* Pods-uSnap (Integration Tests).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uSnap (Integration Tests).xcconfig"; path = "Pods/Pods-uSnap (Integration Tests).xcconfig"; sourceTree = SOURCE_ROOT; };
+		C066A1B15A7949FFBA44A9C4 /* Pods-uSnapIntegrationTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uSnapIntegrationTests.xcconfig"; path = "Pods/Pods-uSnapIntegrationTests.xcconfig"; sourceTree = SOURCE_ROOT; };
+		DA5690D6B2FB453B878DFA52 /* libPods-uSnapIntegrationTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-uSnapIntegrationTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E49094CD208145CEB1CCF459 /* libPods-uSnap (Integration Tests).a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-uSnap (Integration Tests).a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFB968B7770C41E5860D2501 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5A4ADC8116B4F9F70048A9A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A4ADC8916B4F9F70048A9A0 /* UIKit.framework in Frameworks */,
+				5A4ADC8B16B4F9F70048A9A0 /* Foundation.framework in Frameworks */,
+				5A4ADC8D16B4F9F70048A9A0 /* CoreGraphics.framework in Frameworks */,
+				7D4A2298556840DABBAE08FF /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A4ADCAA16B4F9F90048A9A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A4ADCB016B4F9F90048A9A0 /* SenTestingKit.framework in Frameworks */,
+				5A4ADCB116B4F9F90048A9A0 /* UIKit.framework in Frameworks */,
+				5A4ADCB216B4F9F90048A9A0 /* Foundation.framework in Frameworks */,
+				8993A7ED9C9045B69D11E3A2 /* libPods-uSnapTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AE41FD916BFA48A008BAAED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AE41FDA16BFA48A008BAAED /* UIKit.framework in Frameworks */,
+				5AE41FDB16BFA48A008BAAED /* Foundation.framework in Frameworks */,
+				5AE41FDC16BFA48A008BAAED /* CoreGraphics.framework in Frameworks */,
+				0AA6EDFFD9A64B9BA6B0E827 /* libPods-uSnap (Integration Tests).a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5A4ADC7916B4F9F70048A9A0 = {
+			isa = PBXGroup;
+			children = (
+				5A4ADC8E16B4F9F70048A9A0 /* uSnap */,
+				5A4ADCB516B4F9F90048A9A0 /* uSnapTests */,
+				5AE41FB716BF97F4008BAAED /* uSnapIntegrationTests */,
+				5A4ADC8716B4F9F70048A9A0 /* Frameworks */,
+				5A4ADC8516B4F9F70048A9A0 /* Products */,
+				667F068FFB2C4983B9B14694 /* Pods-uSnapTests.xcconfig */,
+				FFB968B7770C41E5860D2501 /* Pods.xcconfig */,
+				5AE41FAD16BF9734008BAAED /* uSnapTests copy-Info.plist */,
+				C066A1B15A7949FFBA44A9C4 /* Pods-uSnapIntegrationTests.xcconfig */,
+				58E0AFE150214FB19172B435 /* Pods-uSnapIntegrationTests.xcconfig */,
+				5AE41FE916BFA48A008BAAED /* uSnap copy-Info.plist */,
+				B48EB41E629848E1B7D9F769 /* Pods-uSnap (Integration Tests).xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		5A4ADC8516B4F9F70048A9A0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5A4ADC8416B4F9F70048A9A0 /* uSnap.app */,
+				5A4ADCAE16B4F9F90048A9A0 /* uSnapTests.octest */,
+				5AE41FE816BFA48A008BAAED /* uSnap (Integration Tests).app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5A4ADC8716B4F9F70048A9A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A4ADC8816B4F9F70048A9A0 /* UIKit.framework */,
+				5A4ADC8A16B4F9F70048A9A0 /* Foundation.framework */,
+				5A4ADC8C16B4F9F70048A9A0 /* CoreGraphics.framework */,
+				5A4ADCAF16B4F9F90048A9A0 /* SenTestingKit.framework */,
+				376550DBAE3C465CB7AE8C79 /* libPods-uSnapTests.a */,
+				4E5D9F6DA4674C21904548E4 /* libPods.a */,
+				24D5E18A3E3A46A19B8904CA /* libPods-uSnapIntegrationTests.a */,
+				DA5690D6B2FB453B878DFA52 /* libPods-uSnapIntegrationTests.a */,
+				E49094CD208145CEB1CCF459 /* libPods-uSnap (Integration Tests).a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5A4ADC8E16B4F9F70048A9A0 /* uSnap */ = {
+			isa = PBXGroup;
+			children = (
+				5A4ADC9716B4F9F80048A9A0 /* AppDelegate.h */,
+				5A4ADC9816B4F9F90048A9A0 /* AppDelegate.m */,
+				5A4ADC8F16B4F9F80048A9A0 /* Supporting Files */,
+				5AE41FD316BFA2D1008BAAED /* Phone.storyboard */,
+			);
+			path = uSnap;
+			sourceTree = "<group>";
+		};
+		5A4ADC8F16B4F9F80048A9A0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5A4ADC9016B4F9F80048A9A0 /* uSnap-Info.plist */,
+				5A4ADC9116B4F9F80048A9A0 /* InfoPlist.strings */,
+				5A4ADC9416B4F9F80048A9A0 /* main.m */,
+				5A4ADC9616B4F9F80048A9A0 /* uSnap-Prefix.pch */,
+				5A4ADC9A16B4F9F90048A9A0 /* Default.png */,
+				5A4ADC9C16B4F9F90048A9A0 /* Default@2x.png */,
+				5A4ADC9E16B4F9F90048A9A0 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5A4ADCB516B4F9F90048A9A0 /* uSnapTests */ = {
+			isa = PBXGroup;
+			children = (
+				5A4ADCB616B4F9F90048A9A0 /* Supporting Files */,
+				5A01E36816B666A000F636D7 /* navigation_specs.m */,
+			);
+			path = uSnapTests;
+			sourceTree = "<group>";
+		};
+		5A4ADCB616B4F9F90048A9A0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5A4ADCB716B4F9F90048A9A0 /* uSnapTests-Info.plist */,
+				5A4ADCB816B4F9FA0048A9A0 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5AE41FB716BF97F4008BAAED /* uSnapIntegrationTests */ = {
+			isa = PBXGroup;
+			children = (
+				5AE41FCF16BF9EC6008BAAED /* TestSteps */,
+				5AE41FB816BF97F4008BAAED /* Supporting Files */,
+				5AE41FC616BF992F008BAAED /* USTestController.h */,
+				5AE41FC716BF992F008BAAED /* USTestController.m */,
+				5AE41FC916BF9A08008BAAED /* KIFTestScenario+USScenarios.h */,
+				5AE41FCA16BF9A08008BAAED /* KIFTestScenario+USScenarios.m */,
+			);
+			path = uSnapIntegrationTests;
+			sourceTree = "<group>";
+		};
+		5AE41FB816BF97F4008BAAED /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5AE41FB916BF97F4008BAAED /* uSnapIntegrationTests-Info.plist */,
+				5AE41FBA16BF97F4008BAAED /* InfoPlist.strings */,
+				5AE41FC016BF97F4008BAAED /* uSnapIntegrationTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5AE41FCF16BF9EC6008BAAED /* TestSteps */ = {
+			isa = PBXGroup;
+			children = (
+				5AE41FD016BF9F4C008BAAED /* KIFTestStep+GlobalSteps.h */,
+				5AE41FD116BF9F4C008BAAED /* KIFTestStep+GlobalSteps.m */,
+			);
+			name = TestSteps;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5A4ADC8316B4F9F70048A9A0 /* uSnap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A4ADCC016B4F9FA0048A9A0 /* Build configuration list for PBXNativeTarget "uSnap" */;
+			buildPhases = (
+				5A4ADC8016B4F9F70048A9A0 /* Sources */,
+				5A4ADC8116B4F9F70048A9A0 /* Frameworks */,
+				5A4ADC8216B4F9F70048A9A0 /* Resources */,
+				E670AFC96F3444E890C675DA /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = uSnap;
+			productName = uSnap;
+			productReference = 5A4ADC8416B4F9F70048A9A0 /* uSnap.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5A4ADCAD16B4F9F90048A9A0 /* uSnapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A4ADCC316B4F9FA0048A9A0 /* Build configuration list for PBXNativeTarget "uSnapTests" */;
+			buildPhases = (
+				5A4ADCA916B4F9F90048A9A0 /* Sources */,
+				5A4ADCAA16B4F9F90048A9A0 /* Frameworks */,
+				5A4ADCAB16B4F9F90048A9A0 /* Resources */,
+				5A4ADCAC16B4F9F90048A9A0 /* ShellScript */,
+				17EEFA691BAA45DCA086AA0C /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A4ADCB416B4F9F90048A9A0 /* PBXTargetDependency */,
+			);
+			name = uSnapTests;
+			productName = uSnapTests;
+			productReference = 5A4ADCAE16B4F9F90048A9A0 /* uSnapTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		5AE41FD516BFA48A008BAAED /* uSnap (Integration Tests) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AE41FE516BFA48A008BAAED /* Build configuration list for PBXNativeTarget "uSnap (Integration Tests)" */;
+			buildPhases = (
+				5AE41FD616BFA48A008BAAED /* Sources */,
+				5AE41FD916BFA48A008BAAED /* Frameworks */,
+				5AE41FDE16BFA48A008BAAED /* Resources */,
+				5AE41FE416BFA48A008BAAED /* Copy Pods Resources */,
+				D147A4BE076B4F22A1579976 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "uSnap (Integration Tests)";
+			productName = uSnap;
+			productReference = 5AE41FE816BFA48A008BAAED /* uSnap (Integration Tests).app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5A4ADC7B16B4F9F70048A9A0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "uSnap Holdings Ltd";
+			};
+			buildConfigurationList = 5A4ADC7E16B4F9F70048A9A0 /* Build configuration list for PBXProject "uSnap" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5A4ADC7916B4F9F70048A9A0;
+			productRefGroup = 5A4ADC8516B4F9F70048A9A0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5A4ADC8316B4F9F70048A9A0 /* uSnap */,
+				5A4ADCAD16B4F9F90048A9A0 /* uSnapTests */,
+				5AE41FD516BFA48A008BAAED /* uSnap (Integration Tests) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5A4ADC8216B4F9F70048A9A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A4ADC9316B4F9F80048A9A0 /* InfoPlist.strings in Resources */,
+				5A4ADC9B16B4F9F90048A9A0 /* Default.png in Resources */,
+				5A4ADC9D16B4F9F90048A9A0 /* Default@2x.png in Resources */,
+				5A4ADC9F16B4F9F90048A9A0 /* Default-568h@2x.png in Resources */,
+				5AE41FD416BFA2D1008BAAED /* Phone.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A4ADCAB16B4F9F90048A9A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A4ADCBA16B4F9FA0048A9A0 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AE41FDE16BFA48A008BAAED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AE41FDF16BFA48A008BAAED /* InfoPlist.strings in Resources */,
+				5AE41FE016BFA48A008BAAED /* Default.png in Resources */,
+				5AE41FE116BFA48A008BAAED /* Default@2x.png in Resources */,
+				5AE41FE216BFA48A008BAAED /* Default-568h@2x.png in Resources */,
+				5AE41FE316BFA48A008BAAED /* Phone.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		17EEFA691BAA45DCA086AA0C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-uSnapTests-resources.sh\"\n";
+		};
+		5A4ADCAC16B4F9F90048A9A0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		5AE41FE416BFA48A008BAAED /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		D147A4BE076B4F22A1579976 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-uSnap (Integration Tests)-resources.sh\"\n";
+		};
+		E670AFC96F3444E890C675DA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5A4ADC8016B4F9F70048A9A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A4ADC9516B4F9F80048A9A0 /* main.m in Sources */,
+				5A4ADC9916B4F9F90048A9A0 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A4ADCA916B4F9F90048A9A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A01E36916B666A000F636D7 /* navigation_specs.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AE41FD616BFA48A008BAAED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AE41FEA16BFA4C5008BAAED /* KIFTestStep+GlobalSteps.h in Sources */,
+				5AE41FEB16BFA4C5008BAAED /* KIFTestStep+GlobalSteps.m in Sources */,
+				5AE41FEC16BFA4C5008BAAED /* uSnapIntegrationTests-Info.plist in Sources */,
+				5AE41FED16BFA4C5008BAAED /* uSnapIntegrationTests-Prefix.pch in Sources */,
+				5AE41FEE16BFA4C5008BAAED /* USTestController.h in Sources */,
+				5AE41FEF16BFA4C5008BAAED /* USTestController.m in Sources */,
+				5AE41FF016BFA4C5008BAAED /* KIFTestScenario+USScenarios.h in Sources */,
+				5AE41FF116BFA4C5008BAAED /* KIFTestScenario+USScenarios.m in Sources */,
+				5AE41FD716BFA48A008BAAED /* main.m in Sources */,
+				5AE41FD816BFA48A008BAAED /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5A4ADCB416B4F9F90048A9A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A4ADC8316B4F9F70048A9A0 /* uSnap */;
+			targetProxy = 5A4ADCB316B4F9F90048A9A0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5A4ADC9116B4F9F80048A9A0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A4ADC9216B4F9F80048A9A0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5A4ADCB816B4F9FA0048A9A0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A4ADCB916B4F9FA0048A9A0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5AE41FBA16BF97F4008BAAED /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5AE41FBB16BF97F4008BAAED /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5A4ADCBE16B4F9FA0048A9A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[arch=*]" = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5A4ADCBF16B4F9FA0048A9A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[arch=*]" = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5A4ADCC116B4F9FA0048A9A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFB968B7770C41E5860D2501 /* Pods.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "uSnap/uSnap-Prefix.pch";
+				INFOPLIST_FILE = "uSnap/uSnap-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5A4ADCC216B4F9FA0048A9A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFB968B7770C41E5860D2501 /* Pods.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "uSnap/uSnap-Prefix.pch";
+				INFOPLIST_FILE = "uSnap/uSnap-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		5A4ADCC416B4F9FA0048A9A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 667F068FFB2C4983B9B14694 /* Pods-uSnapTests.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/uSnap.app/uSnap";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "uSnap/uSnap-Prefix.pch";
+				INFOPLIST_FILE = "uSnapTests/uSnapTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		5A4ADCC516B4F9FA0048A9A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 667F068FFB2C4983B9B14694 /* Pods-uSnapTests.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/uSnap.app/uSnap";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "uSnap/uSnap-Prefix.pch";
+				INFOPLIST_FILE = "uSnapTests/uSnapTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		5AE41FE616BFA48A008BAAED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B48EB41E629848E1B7D9F769 /* Pods-uSnap (Integration Tests).xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "uSnap/uSnap-Prefix.pch";
+				INFOPLIST_FILE = "uSnap copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "uSnap (Integration Tests)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5AE41FE716BFA48A008BAAED /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B48EB41E629848E1B7D9F769 /* Pods-uSnap (Integration Tests).xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "uSnap/uSnap-Prefix.pch";
+				INFOPLIST_FILE = "uSnap copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "uSnap (Integration Tests)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5A4ADC7E16B4F9F70048A9A0 /* Build configuration list for PBXProject "uSnap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A4ADCBE16B4F9FA0048A9A0 /* Debug */,
+				5A4ADCBF16B4F9FA0048A9A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A4ADCC016B4F9FA0048A9A0 /* Build configuration list for PBXNativeTarget "uSnap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A4ADCC116B4F9FA0048A9A0 /* Debug */,
+				5A4ADCC216B4F9FA0048A9A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A4ADCC316B4F9FA0048A9A0 /* Build configuration list for PBXNativeTarget "uSnapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A4ADCC416B4F9FA0048A9A0 /* Debug */,
+				5A4ADCC516B4F9FA0048A9A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5AE41FE516BFA48A008BAAED /* Build configuration list for PBXNativeTarget "uSnap (Integration Tests)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AE41FE616BFA48A008BAAED /* Debug */,
+				5AE41FE716BFA48A008BAAED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5A4ADC7B16B4F9F70048A9A0 /* Project object */;
+}

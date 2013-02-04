@@ -1,14 +1,17 @@
 
 PODS:
 - AFNetworking (1.1.0)
-- Kiwi (2.0.3)
+- KIF (0.0.2)
+- Kiwi (2.0.4)
 
 DEPENDENCIES:
 - AFNetworking (~> 1.1.0)
+- KIF (~> 0.0.2)
 - Kiwi
 
 SPEC CHECKSUMS:
   AFNetworking: 761a418233d280c1e0580bcb76ff9cb4c3073d17
-  Kiwi: 0b72ba92e1c394d1cbbc7b1df6dcda3e20791a9b
+  Kiwi: 44abe10fc11eb6a9e05d580211abd1f8fdb01260
+  KIF: 3ba892db1b494ebb02148327f8cbf7600100f342
 
-COCOAPODS: 0.16.1
+COCOAPODS: 0.16.2

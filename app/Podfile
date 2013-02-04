@@ -3,3 +3,6 @@
  target :uSnapTests, :exclusive => true do
      pod 'Kiwi'
  end
+ target "uSnap (Integration Tests)", :exclusive => false do
+     pod 'KIF', '~> 0.0.2'
+ end

@@ -7,12 +7,17 @@
 //
 
 #import "AppDelegate.h"
-
+#if RUN_KIF_TESTS
+#import "USTestController.h"
+#endif
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+  
+
+
     return YES;
 }
 							
@@ -36,6 +41,12 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+#if RUN_KIF_TESTS
+    [[USTestController sharedInstance] startTestingWithCompletionBlock:^{
+        // Exit after the tests complete so that CI knows we're done
+        exit([[USTestController sharedInstance] failureCount]);
+    }];
+#endif
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
