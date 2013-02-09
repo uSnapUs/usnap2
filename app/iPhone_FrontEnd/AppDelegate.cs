@@ -30,8 +30,12 @@ namespace iPhone_FrontEnd
 		public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
 		{
 			application.SetStatusBarHidden(true,false);
+			this.Window = new UIWindow(UIScreen.MainScreen.Bounds);
 			var defaultViewController = new LandingPageViewController();
 			this.Window.RootViewController = defaultViewController;
+			this.Window.MakeKeyAndVisible();
+			this.Window.AutoresizingMask = UIViewAutoresizing.FlexibleHeight|UIViewAutoresizing.FlexibleWidth;
+
 			return true;
 		}
 		

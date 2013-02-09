@@ -110,9 +110,7 @@
     <Compile Include="NearbyEventViewController.designer.cs">
       <DependentUpon>NearbyEventViewController.cs</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <InterfaceDefinition Include="MainStoryboard.storyboard" />
+    <Compile Include="LandingPageView.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

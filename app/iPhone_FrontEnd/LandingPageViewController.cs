@@ -10,7 +10,7 @@ namespace iPhone_FrontEnd
 {
 	public partial class LandingPageViewController : UIViewController
 	{
-		public LandingPageViewController (IntPtr handle) : base (handle)
+		public LandingPageViewController ():base()
 		{
 			String fonts = "";
 			List<String> fontFamilies = new List<String> (UIFont.FamilyNames);
@@ -22,113 +22,27 @@ namespace iPhone_FrontEnd
 				fonts += "\n";
 			}
 			Console.WriteLine (fonts);          
+			this.View = new LandingPageView();
 		}
-	 	public override void ViewWillAppear (bool animated)
+		public override void DidRotate (UIInterfaceOrientation fromInterfaceOrientation)
 		{
-			base.ViewWillAppear (animated);
-			EventIdField.Font = UIFont.FromName("ProximaNova-Bold",24);
+			base.DidRotate (fromInterfaceOrientation);
 		}
-		partial void FindPressed (NSObject sender)
+		public override bool WantsFullScreenLayout {
+			get {
+				return true;
+			}
+			set {
+				base.WantsFullScreenLayout = value;
+			}
+		}
+		public override UIInterfaceOrientationMask GetSupportedInterfaceOrientations ()
 		{
-			if(this.LandingPageView!=null){
-				var originalLogoPosition = Logo.Frame;
-				EventIdField.Frame = new System.Drawing.RectangleF(CreateButton.Frame.Location,CreateButton.Frame.Size);
-				JoinButton.Frame =  new System.Drawing.RectangleF(MyEventsButton.Frame.Location,MyEventsButton.Frame.Size);
-				LandingTagline.Hidden = true;
-				FindButton.Hidden=true;
-				CreateButton.Hidden=true;
-				MyEventsButton.Hidden=true;
-				InfoButton.Hidden=true;
-				var originalCenter = LandingPageView.Center;
-				UIView.Animate(0.5,()=>{
-
-					LandingPageView.Center = new System.Drawing.PointF(originalCenter.X,originalCenter.Y-110);
-					Logo.Frame = new System.Drawing.RectangleF(originalLogoPosition.X+26,originalLogoPosition.Y+110,217,98);
-			
-					EventIdField.Hidden = false;
-					JoinButton.Hidden=false;
-					BackButton.Hidden = false;
-					FindTagline.Hidden = false;
-				},()=>{
-
-
-
-				});
-			}
+			return UIInterfaceOrientationMask.AllButUpsideDown;
 		}
-		partial void BackPressed(NSObject sender){
-			if(this.LandingPageView!=null){
-				var originalLogoPosition = Logo.Frame;
-
-				BackButton.Hidden = true;
-				FindTagline.Hidden = true;
-				EventIdField.Hidden = true;
-				JoinButton.Hidden=true;
-
-				var originalCenter = LandingPageView.Center;
-				UIView.Animate(0.5,()=>{
-
-					LandingPageView.Center = new System.Drawing.PointF(originalCenter.X,originalCenter.Y+110);					
-					Logo.Frame = new System.Drawing.RectangleF(originalLogoPosition.X-26,originalLogoPosition.Y-110,270,122);
-					LandingTagline.Hidden = false;
-					FindButton.Hidden=false;
-					CreateButton.Hidden=false;
-					MyEventsButton.Hidden=false;
-					InfoButton.Hidden=false;
-				},()=>{
-
-				
-
-				});
-			}
-		}
-		partial void OnJoinEditBegin(NSObject sender){
-			if(this.LandingPageView!=null){
-
-				var originalCenter = LandingPageView.Center;
-				UIView.Animate(0.2,()=>{
-					
-					LandingPageView.Center = new System.Drawing.PointF(originalCenter.X,originalCenter.Y-50);				
-				},()=>{
-					
-					
-					
-				});
-			}
-		}
-		partial void OnJoinExit (MonoTouch.Foundation.NSObject sender)
+		public override bool ShouldAutorotateToInterfaceOrientation (UIInterfaceOrientation toInterfaceOrientation)
 		{
-			((UITextField)sender).ResignFirstResponder();
-			if(this.LandingPageView!=null){
-				
-				var originalCenter = LandingPageView.Center;
-				UIView.Animate(0.2,()=>{
-					
-					LandingPageView.Center = new System.Drawing.PointF(originalCenter.X,originalCenter.Y+50);				
-				},()=>{
-					
-					
-					
-				});
-			}
-		}
-
-		partial void FindNearbyPressed (MonoTouch.Foundation.NSObject sender)
-		{
-			if(this.LandingPageView!=null){
-				BackButton.Hidden = true;		
-				var originalCenter = LandingPageView.Center;
-				UIView.Animate(0.5,()=>{
-
-					LandingPageView.Center = new System.Drawing.PointF(originalCenter.X,originalCenter.Y-(LandingPageView.Frame.Height));					
-
-				},()=>{
-					PerformSegue("GoToNearbyEventView",this);
-					
-					
-				});
-			}
-
+			return true;
 		}
 	}
 }
