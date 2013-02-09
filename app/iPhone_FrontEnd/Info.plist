@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>MinimumOSVersion</key>
+	<string>5.0</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Fonts/Gelato Script.otf</string>
+		<string>Fonts/ProximaNova-Bold.otf</string>
+		<string>Fonts/ProximaNova-Black.otf</string>
+		<string>Fonts/ProximaNova-BoldIt.otf</string>
+		<string>Fonts/ProximaNova-Extrabold.otf</string>
+		<string>Fonts/ProximaNova-Light.otf</string>
+		<string>Fonts/ProximaNova-LightItalic.otf</string>
+		<string>Fonts/ProximaNova-RegItalic.otf</string>
+		<string>Fonts/ProximaNova-Regular.otf</string>
+		<string>Fonts/ProximaNova-Semibold.otf</string>
+		<string>Fonts/ProximaNova-SemiboldItalic.otf</string>
+	</array>
+	<key>UIDeviceFamily</key>
+	<array>
+		<integer>1</integer>
+	</array>
+	<key>UIMainStoryboardFile</key>
+	<string>MainStoryboard</string>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+</dict>
+</plist>
