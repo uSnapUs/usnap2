@@ -111,6 +111,7 @@
       <DependentUpon>NearbyEventViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="LandingPageView.cs" />
+    <Compile Include="ButtonView.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -140,8 +141,8 @@
     <BundleResource Include="Resources\Tagline2%402x.png" />
     <BundleResource Include="Resources\Button_Join.png" />
     <BundleResource Include="Resources\Button_Join%402x.png" />
-    <BundleResource Include="Resources\Field_EventId.png" />
-    <BundleResource Include="Resources\Field_EventId%402x.png" />
+    <BundleResource Include="Resources\Field_Background.png" />
+    <BundleResource Include="Resources\Field_Background%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Fonts\Gelato Script.otf" />

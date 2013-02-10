@@ -7,7 +7,7 @@ namespace iPhone_FrontEnd
 {
 	public static class MapKitHelpers
 	{
-		static void SetCenterCoordinate (this MKMapView MapToCenter, CLLocationCoordinate2D centerCoordinate, int zoomLevel, bool animated)
+		public static void SetCenterCoordinate (this MKMapView MapToCenter, CLLocationCoordinate2D centerCoordinate, int zoomLevel, bool animated)
 		{
 			// clamp large numbers to 28
 			zoomLevel = Math.Min (zoomLevel, 28);

@@ -4,13 +4,19 @@ using System;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using MonoTouch.MapKit;
 
 namespace iPhone_FrontEnd
 {
 	public partial class NearbyEventViewController : UIViewController
 	{
-		public NearbyEventViewController (IntPtr handle) : base (handle)
+		MKMapView _mapView;
+
+		public NearbyEventViewController (MKMapView view) : base ()
 		{
+			this._mapView = view;
+			this._mapView.ShowsUserLocation = true;
+			this.View = view;
 		}
 	}
 }

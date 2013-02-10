@@ -5,11 +5,19 @@ using System;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.Collections.Generic;
+using MonoTouch.CoreLocation;
+using System.Linq;
 
 namespace iPhone_FrontEnd
 {
 	public partial class LandingPageViewController : UIViewController
 	{
+		LandingPageView _landingPageView;
+
+		CLLocationManager _locationManager;
+
+		CLLocation _currentLocation;
+
 		public LandingPageViewController ():base()
 		{
 			String fonts = "";
@@ -21,8 +29,12 @@ namespace iPhone_FrontEnd
 				}
 				fonts += "\n";
 			}
-			Console.WriteLine (fonts);          
-			this.View = new LandingPageView();
+			Console.WriteLine (fonts);      
+			_landingPageView = new LandingPageView();
+			_landingPageView.FindButtonPressed+=OnFindButtonPress;
+			_landingPageView.BackButtonPressed+=OnBackButtonPress;
+			_landingPageView.FindNearbyButtonPressed+=OnFindNearbyButtonPress;
+			this.View = _landingPageView;
 		}
 		public override void DidRotate (UIInterfaceOrientation fromInterfaceOrientation)
 		{
@@ -43,6 +55,64 @@ namespace iPhone_FrontEnd
 		public override bool ShouldAutorotateToInterfaceOrientation (UIInterfaceOrientation toInterfaceOrientation)
 		{
 			return true;
+		}
+
+		void OnLocationUpdated (object sender, CLLocationsUpdatedEventArgs e)
+		{
+			var newLocation = e.Locations.Last();
+			if (_currentLocation == null||newLocation.HorizontalAccuracy>_currentLocation.HorizontalAccuracy) {
+				_currentLocation = newLocation;
+				_landingPageView.SetLocation(_currentLocation);
+			}
+			else{_locationManager.StopUpdatingLocation();}
+			
+		}
+
+		void OnLocationUpdated_Old (object sender, CLLocationUpdatedEventArgs e)
+		{
+			var locations = new CLLocation[]{e.OldLocation,e.NewLocation};
+			OnLocationUpdated(sender,new CLLocationsUpdatedEventArgs(locations));
+		}
+
+		void OnFindButtonPress (object sender, EventArgs args){
+			this._landingPageView.ShowFindNearby();
+			_locationManager = new CLLocationManager();
+			_locationManager.UpdatedLocation += this.OnLocationUpdated_Old;
+			_locationManager.LocationsUpdated+=this.OnLocationUpdated;
+			_locationManager.StartUpdatingLocation();
+
+		}
+
+		void goToMapView ()
+		{
+			var mapViewController = new NearbyEventViewController(this._landingPageView.MapView);
+			this.PresentViewController(mapViewController,false,()=>{});
+			this.Dispose();
+		}
+
+		void OnFindNearbyButtonPress (object sender, EventArgs e)
+		{
+			this._landingPageView.AnimateToFullMap(()=>this.goToMapView());
+		}
+
+		void OnBackButtonPress (object sender, EventArgs e)
+		{
+			this._locationManager.StopUpdatingLocation();
+			this._landingPageView.HideFindNearby();
+		}
+
+		void UnwireEvents ()
+		{
+			_landingPageView.FindButtonPressed-=OnFindButtonPress;
+			_landingPageView.BackButtonPressed-=OnBackButtonPress;
+			_landingPageView.FindNearbyButtonPressed-=OnFindNearbyButtonPress;
+		}
+
+		protected override void Dispose (bool disposing)
+		{
+			UnwireEvents();
+			this.View.Dispose();
+
 		}
 	}
 }
