@@ -7,6 +7,7 @@ using MonoTouch.UIKit;
 using System.Collections.Generic;
 using MonoTouch.CoreLocation;
 using System.Linq;
+using System.Diagnostics;
 
 namespace iPhone_FrontEnd
 {
@@ -20,38 +21,22 @@ namespace iPhone_FrontEnd
 
 		public LandingPageViewController ():base()
 		{
-			String fonts = "";
-			List<String> fontFamilies = new List<String> (UIFont.FamilyNames);
-			fontFamilies.Sort ();
-			foreach (String familyName in fontFamilies) {
-				foreach (String fontName in UIFont.FontNamesForFamilyName (familyName)) {
-					fonts += fontName + "\n";
-				}
-				fonts += "\n";
-			}
-			Console.WriteLine (fonts);      
+			UIApplication.SharedApplication.SetStatusBarHidden(true,true);
+		
 			_landingPageView = new LandingPageView();
 			_landingPageView.FindButtonPressed+=OnFindButtonPress;
 			_landingPageView.BackButtonPressed+=OnBackButtonPress;
 			_landingPageView.FindNearbyButtonPressed+=OnFindNearbyButtonPress;
+			_landingPageView.JoinButtonPressed+=OnJoinButtonPress;
+			_landingPageView.CreateButtonPressed+=OnCreateButtonPress;
 			this.View = _landingPageView;
 		}
-		public override void DidRotate (UIInterfaceOrientation fromInterfaceOrientation)
-		{
-			base.DidRotate (fromInterfaceOrientation);
-		}
-		public override bool WantsFullScreenLayout {
-			get {
-				return true;
-			}
-			set {
-				base.WantsFullScreenLayout = value;
-			}
-		}
+	
 		public override UIInterfaceOrientationMask GetSupportedInterfaceOrientations ()
 		{
-			return UIInterfaceOrientationMask.AllButUpsideDown;
+			return UIInterfaceOrientationMask.All;
 		}
+
 		public override bool ShouldAutorotateToInterfaceOrientation (UIInterfaceOrientation toInterfaceOrientation)
 		{
 			return true;
@@ -85,9 +70,12 @@ namespace iPhone_FrontEnd
 
 		void goToMapView ()
 		{
-			var mapViewController = new NearbyEventViewController(this._landingPageView.MapView);
-			this.PresentViewController(mapViewController,false,()=>{});
-			this.Dispose();
+			var mapView = this._landingPageView.MapView;
+			Console.WriteLine("Breakpoint 1");
+			var mapViewController = new FindNearbyEventViewController(mapView);
+			this.PresentViewController(mapViewController,false,()=>{this.Dispose();});
+			mapView= null;
+
 		}
 
 		void OnFindNearbyButtonPress (object sender, EventArgs e)
@@ -101,18 +89,41 @@ namespace iPhone_FrontEnd
 			this._landingPageView.HideFindNearby();
 		}
 
+		void OnJoinButtonPress (object sender, EventArgs e)
+		{
+			var eventDashboardViewController = new EventDashboardViewController();
+			this.PresentViewController(eventDashboardViewController,true,()=>{this.Dispose();});
+
+		}
+
+		void OnCreateButtonPress (object sender, EventArgs e)
+		{
+			var createEventViewController = new CreateEventViewController();
+			createEventViewController.ModalTransitionStyle = UIModalTransitionStyle.FlipHorizontal;
+			this.PresentViewController(createEventViewController,true,()=>{this.Dispose ();});
+		}
+
 		void UnwireEvents ()
 		{
 			_landingPageView.FindButtonPressed-=OnFindButtonPress;
 			_landingPageView.BackButtonPressed-=OnBackButtonPress;
 			_landingPageView.FindNearbyButtonPressed-=OnFindNearbyButtonPress;
+			_landingPageView.JoinButtonPressed-=OnJoinButtonPress;
+			_landingPageView.CreateButtonPressed-=OnCreateButtonPress;
 		}
 
 		protected override void Dispose (bool disposing)
 		{
-			UnwireEvents();
-			this.View.Dispose();
+			Console.WriteLine("Disposing Landing page view controller");
+			if (this._locationManager != null) {
+				this._locationManager.StopUpdatingLocation ();
+			}
 
+			UnwireEvents();
+			this._locationManager = null;
+			this._landingPageView = null;
+			this._currentLocation = null;
+			base.Dispose(disposing);
 		}
 	}
 }

@@ -4,13 +4,202 @@ using System;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using MonoTouch.AssetsLibrary;
+using MonoTouch.CoreGraphics;
+using System.Drawing;
+using System.IO;
 
 namespace iPhone_FrontEnd
 {
-	public partial class EventDashboardViewController : UIViewController
+	public partial class EventDashboardViewController : UITableViewController
 	{
-		public EventDashboardViewController (IntPtr handle) : base (handle)
+		EventDashboardView _eventDashboardView;
+
+		StreamTableData _streamData;
+
+		public EventDashboardViewController () : base ()
 		{
+			UIApplication.SharedApplication.SetStatusBarHidden(false,true);
+			_eventDashboardView = new EventDashboardView();
+			_eventDashboardView.BackButtonPressed+=OnBackButtonPressed;
+			_eventDashboardView.CameraButtonPressed+=OnCameraButtonPressed;
+			_streamData = new StreamTableData();
+			this.View = _eventDashboardView;
+			_eventDashboardView.TableView.DataSource = _streamData;
+		}
+
+		void OnBackButtonPressed (object sender, EventArgs e)
+		{
+			var landingView = new LandingPageViewController();
+			this.PresentViewController(landingView,true,()=>{this.Dispose();});
+		}
+
+		//UIImagePickerControllerSourceType _lastPhotoSource;
+
+		void OnCameraButtonPressed (object sender, EventArgs e)
+		{
+			this.PresentViewController(new ImagePickerController(),true,()=>{this.Dispose ();});
+			/*	
+			this._lastPhotoSource = UIImagePickerControllerSourceType.PhotoLibrary;
+				if (UIImagePickerController.IsSourceTypeAvailable (UIImagePickerControllerSourceType.Camera)) {
+					UIActionSheet sheet = new UIActionSheet("Image Source"){
+						
+						
+					};
+					sheet.AddButton("Photo Library");
+					sheet.AddButton("Camera");
+					sheet.AddButton("Cancel");
+					sheet.CancelButtonIndex = 2;
+					sheet.Style = UIActionSheetStyle.Automatic;
+					sheet.ShowInView(View);
+					sheet.Clicked += (actionSender,actionEvent)=>{
+						switch (actionEvent.ButtonIndex)
+						{
+						case 0:
+							// Photo library.
+							
+							Camera.SelectPicture(this,CameraGotImage);
+							break;
+							
+						case 1:
+							// Camera.
+							_lastPhotoSource = UIImagePickerControllerSourceType.Camera;
+							Camera.TakePicture(this, CameraGotImage);
+							break;
+							
+						default:
+							// Cancel.
+							break;
+						}
+					};
+					
+					
+				} else {        
+					Camera.SelectPicture(this,CameraGotImage);
+				}
+*/
+		}
+		/*
+		void CameraGotImage (NSDictionary info)
+		{
+			
+			var photo = info.ValueForKey (new NSString ("UIImagePickerControllerOriginalImage")) as UIImage;
+			if (photo == null)
+				return;
+			if (_lastPhotoSource == UIImagePickerControllerSourceType.Camera) {
+				var meta = info.ValueForKey (new NSString ("UIImagePickerControllerMediaMetadata")) as NSDictionary;
+				var library = new ALAssetsLibrary ();
+				library.WriteImageToSavedPhotosAlbum (photo.CGImage, meta, (assetUrl, error) => {
+				});
+			}
+			
+
+				//make sure we rotate the image correctly
+				var orientedPhoto = ScaleImage(photo, Math.Max((int)photo.Size.Width, (int)photo.Size.Height));
+				var thumbnail = ScaleImage(orientedPhoto, 200);
+				using (NSData imageData = orientedPhoto.AsPNG())
+					using (NSData thumbnailData = thumbnail.AsPNG())
+				{
+					var thumbFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "Thumbnails",
+					                                 Guid.NewGuid().ToString("") + ".png");
+					if (!Directory.Exists(thumbFilePath))
+					{
+						var dirPath = Path.GetDirectoryName(thumbFilePath);
+						if (dirPath != null)
+						{
+							Directory.CreateDirectory(dirPath);
+						}
+					}
+					NSError error;
+					thumbnailData.Save(thumbFilePath,true,out error);
+					var byteArray = new byte[imageData.Length];
+					System.Runtime.InteropServices.Marshal.Copy(imageData.Bytes, byteArray, 0,Convert.ToInt32(imageData.Length));
+
+				}
+				orientedPhoto.Dispose();
+				
+			
+		}
+		*/
+		public static UIImage ScaleImage(UIImage image, int maxSize)
+		{
+			
+			UIImage res;
+			
+			using (CGImage imageRef = image.CGImage)
+			{
+				CGImageAlphaInfo alphaInfo = imageRef.AlphaInfo;
+				CGColorSpace colorSpaceInfo = CGColorSpace.CreateDeviceRGB();
+				if (alphaInfo == CGImageAlphaInfo.None)
+				{
+					alphaInfo = CGImageAlphaInfo.NoneSkipLast;
+				}
+				
+				int width, height;
+				
+				width = imageRef.Width;
+				height = imageRef.Height;
+				
+				
+				if (height >= width)
+				{
+					width = (int)Math.Floor((double)width * ((double)maxSize / (double)height));
+					height = maxSize;
+				}
+				else
+				{
+					height = (int)Math.Floor((double)height * ((double)maxSize / (double)width));
+					width = maxSize;
+				}
+				
+				
+				CGBitmapContext bitmap;
+				
+				if (image.Orientation == UIImageOrientation.Up || image.Orientation == UIImageOrientation.Down)
+				{
+					bitmap = new CGBitmapContext(IntPtr.Zero, width, height, imageRef.BitsPerComponent, imageRef.BytesPerRow, colorSpaceInfo, alphaInfo);
+				}
+				else
+				{
+					bitmap = new CGBitmapContext(IntPtr.Zero, height, width, imageRef.BitsPerComponent, imageRef.BytesPerRow, colorSpaceInfo, alphaInfo);
+				}
+				
+				switch (image.Orientation)
+				{
+				case UIImageOrientation.Left:
+					bitmap.RotateCTM((float)Math.PI / 2);
+					bitmap.TranslateCTM(0, -height);
+					break;
+				case UIImageOrientation.Right:
+					bitmap.RotateCTM(-((float)Math.PI / 2));
+					bitmap.TranslateCTM(-width, 0);
+					break;
+				case UIImageOrientation.Up:
+					break;
+				case UIImageOrientation.Down:
+					bitmap.TranslateCTM(width, height);
+					bitmap.RotateCTM(-(float)Math.PI);
+					break;
+				}
+				
+				bitmap.DrawImage(new Rectangle(0, 0, width, height), imageRef);
+				
+				
+				res = UIImage.FromImage(bitmap.ToImage());
+				bitmap = null;
+				
+			}
+			
+			
+			return res;
+		}
+		protected override void Dispose (bool disposing)
+		{
+			Console.WriteLine("Disposing Event Dashboard View Controller");
+			_eventDashboardView.BackButtonPressed-=OnBackButtonPressed;
+			_eventDashboardView = null;
+			base.Dispose (disposing);
+
 		}
 	}
 }

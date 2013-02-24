@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iPhone_FrontEnd", "iPhone_FrontEnd\iPhone_FrontEnd.csproj", "{76400EC1-81CA-4F70-8B1B-33967C740FDF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GPUImage", "GPUImage\GPUImage.csproj", "{6D269E42-D179-41F4-9254-F79738E957C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -13,6 +15,18 @@ Global
 		AppStore|iPhone = AppStore|iPhone
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6D269E42-D179-41F4-9254-F79738E957C9}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
+		{6D269E42-D179-41F4-9254-F79738E957C9}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
+		{6D269E42-D179-41F4-9254-F79738E957C9}.AppStore|iPhone.ActiveCfg = Release|Any CPU
+		{6D269E42-D179-41F4-9254-F79738E957C9}.AppStore|iPhone.Build.0 = Release|Any CPU
+		{6D269E42-D179-41F4-9254-F79738E957C9}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{6D269E42-D179-41F4-9254-F79738E957C9}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{6D269E42-D179-41F4-9254-F79738E957C9}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{6D269E42-D179-41F4-9254-F79738E957C9}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{6D269E42-D179-41F4-9254-F79738E957C9}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{6D269E42-D179-41F4-9254-F79738E957C9}.Release|iPhone.Build.0 = Release|Any CPU
+		{6D269E42-D179-41F4-9254-F79738E957C9}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{6D269E42-D179-41F4-9254-F79738E957C9}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{76400EC1-81CA-4F70-8B1B-33967C740FDF}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
 		{76400EC1-81CA-4F70-8B1B-33967C740FDF}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
 		{76400EC1-81CA-4F70-8B1B-33967C740FDF}.AppStore|iPhone.ActiveCfg = AppStore|iPhone

@@ -27,7 +27,7 @@ namespace iPhone_FrontEnd
 
 		UIButton _joinButton;
 
-		MKMapView _mapView;
+		FindNearbyMapView _mapView;
 
 		UIView _landingView;
 
@@ -49,12 +49,19 @@ namespace iPhone_FrontEnd
 
 		public EventHandler<EventArgs> FindNearbyButtonPressed;
 
+		public EventHandler<EventArgs> JoinButtonPressed;
+
 		public LandingPageView ():base()
 		{
+			BecomeFirstResponder();
 			this.InitViews();
 			this.WireEvents();
 		}
-
+		public FindNearbyMapView MapView{
+			get{
+				return _mapView;
+			}
+		}
 		public override void LayoutSubviews ()
 		{
 
@@ -63,9 +70,7 @@ namespace iPhone_FrontEnd
 			var mainBounds = this.Bounds;
 			var height = this.Bounds.Size.Height;
 			var width = this.Bounds.Size.Width;
-			Console.WriteLine ("height:{0},width:{1}", height, width);
-			Console.WriteLine (this.Bounds);
-			
+
 			//	this.Frame = new System.Drawing.RectangleF(0,this.Bounds.Y-viewOffset,width,height);
 			if (viewOffset != 0) {
 				mainBounds.Y = mainBounds.Y - viewOffset;
@@ -97,7 +102,7 @@ namespace iPhone_FrontEnd
 			_infoButton.Frame = new System.Drawing.RectangleF(width-23-10,height-23-10,23,23);
 			_eventIdView.Frame = new System.Drawing.RectangleF((horizontalMiddle-(234/2)),_taglineView.Frame.Y+_taglineView.Frame.Height+20,234,63);
 			var fieldBounds = _eventIdView.Bounds;
-			_eventIdField.Frame = new System.Drawing.RectangleF(0,fieldBounds.Y+10,fieldBounds.Width,fieldBounds.Height-20);
+			_eventIdField.Frame = new System.Drawing.RectangleF(0,fieldBounds.Y+15,fieldBounds.Width,fieldBounds.Height-20);
 			_joinButton.Frame = new System.Drawing.RectangleF((horizontalMiddle-(234/2)),_eventIdView.Frame.Y+_eventIdView.Frame.Height+5,234,63);
 		}
 
@@ -116,6 +121,7 @@ namespace iPhone_FrontEnd
 				Image = UIImage.FromFile(@"tagline.png"),
 				ContentMode = UIViewContentMode.Center
 			};
+
 			_taglineView2 = new UIImageView{
 				Image = UIImage.FromFile(@"tagline2.png"),
 				ContentMode = UIViewContentMode.Center,
@@ -141,14 +147,15 @@ namespace iPhone_FrontEnd
 				Enabled =true,
 				EnablesReturnKeyAutomatically = true,
 				ReturnKeyType = UIReturnKeyType.Join,
-				AutocapitalizationType = UITextAutocapitalizationType.AllCharacters 
+				AutocapitalizationType = UITextAutocapitalizationType.AllCharacters,
+
 			};
 
 			_eventIdView.AddSubview(_eventIdField);
 			_eventIdField.ShouldReturn = delegate(UITextField textField) {
 				return true;
 			};
-
+			_mapView = new FindNearbyMapView();
 			_findNearbyButton = new UIButton{Hidden=true};
 			_backButton = new UIButton{Hidden=true};
 			_findButton.SetBackgroundImage(UIImage.FromFile(@"Button_Find.png"),UIControlState.Normal);
@@ -158,14 +165,16 @@ namespace iPhone_FrontEnd
 			_backButton.SetBackgroundImage(UIImage.FromFile(@"Button_Back.png"),UIControlState.Normal);
 			_findNearbyButton.SetBackgroundImage(UIImage.FromFile(@"Button_FindNearby.png"),UIControlState.Normal);
 			_joinButton.SetBackgroundImage(UIImage.FromFile(@"Button_Join.png"),UIControlState.Normal);
-			_mapView = new MKMapView();
+
 			this._landingView.ClipsToBounds = true;
 			this.ClipsToBounds = true;
 			this.AutosizesSubviews = true;
 			//_backgroundFrame.AutoresizingMask = UIViewAutoresizing.FlexibleHeight|UIViewAutoresizing.FlexibleWidth;
 			this.AddSubview(_mapView);
 			_mapView.AddSubview(_findNearbyButton);
+
 			this.AddSubview(_landingView);
+
 			_landingView.AddSubview(_backgroundFrame);
 			_landingView.AddSubview(_logoImageView);
 			_landingView.AddSubview(_taglineView);
@@ -186,7 +195,10 @@ namespace iPhone_FrontEnd
 				this.FindButtonPressed.Invoke(this,e);
 			}
 		}
-
+		public void SetLocation (CLLocation _currentLocation)
+		{
+			this.MapView.SetCenterCoordinate(_currentLocation.Coordinate,18,false);
+		}
 		void OnCreateButtonPress (object sender, EventArgs e)
 		{
 			if (CreateButtonPressed != null) {
@@ -216,7 +228,6 @@ namespace iPhone_FrontEnd
 
 		void OnEventIdEditBegin (object sender, EventArgs e)
 		{
-			Console.WriteLine("edit begin");
 			_extraOffset = 20;
 			LayoutSubviews();
 		}
@@ -226,7 +237,15 @@ namespace iPhone_FrontEnd
 			_extraOffset = 0;
 			this._joinButton.Enabled =false;
 			LayoutSubviews();
+			this.OnJoinPress(sender,e);
 			this._eventIdField.ResignFirstResponder();
+		}
+
+		void OnJoinPress (object sender, EventArgs e)
+		{
+			if (this.JoinButtonPressed != null) {
+				JoinButtonPressed.Invoke(this,e);
+			}
 		}
 
 		void WireEvents ()
@@ -238,6 +257,7 @@ namespace iPhone_FrontEnd
 			_findNearbyButton.TouchUpInside+=OnFindNearbyPress;
 			_eventIdField.EditingDidBegin+=OnEventIdEditBegin;
 			_eventIdField.EditingDidEndOnExit +=OnEventIdEditEnd;
+			_joinButton.TouchUpInside+=OnJoinPress;
 
 		}
 
@@ -297,17 +317,13 @@ namespace iPhone_FrontEnd
 			});
 		}
 
-		public void SetLocation (CLLocation _currentLocation)
-		{
-			_mapView.SetCenterCoordinate(_currentLocation.Coordinate,18,false);
-		}
 
-		public MKMapView MapView {
-			get{return _mapView;}
-		}
+
+
 
 		void UnwireEvents ()
 		{
+
 			_findButton.TouchUpInside -= OnFindButtonPress;
 			_createButton.TouchUpInside -= OnCreateButtonPress;
 			_myEventsButton.TouchUpInside -= OnMyEventButtonPress;
@@ -315,10 +331,12 @@ namespace iPhone_FrontEnd
 			_findNearbyButton.TouchUpInside-=OnFindNearbyPress;
 			_eventIdField.EditingDidBegin-=OnEventIdEditBegin;
 			_eventIdField.EditingDidEndOnExit -=OnEventIdEditEnd;
+			_joinButton.TouchUpInside+=OnJoinPress;
 		}
 
 		protected override void Dispose (bool disposing)
 		{
+			Console.WriteLine("Disposing landing page view");
 			this.UnwireEvents();
 			_backgroundFrame = null;
 			_logoImageView = null;
