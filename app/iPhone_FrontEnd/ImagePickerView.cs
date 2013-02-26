@@ -68,6 +68,7 @@ namespace iPhone_FrontEnd
 		public EventHandler<UIPinchEventArgs> ImagePinched;
 		public EventHandler<UITapEventArgs> ImageTapped;
 		public EventHandler<EventArgs> LibraryButtonPressed;
+		public EventHandler<EventArgs> FlipButtonPressed;
 
 		public ImagePickerView ():base()
 		{
@@ -105,7 +106,7 @@ namespace iPhone_FrontEnd
 		void RemoveEvents ()
 		{
 			_libraryButton.TouchUpInside -= OnLibraryPress;
-
+			_flipButton.TouchUpInside -= OnFlipPress;
 		}
 
 		protected override void Dispose (bool disposing)
@@ -154,6 +155,7 @@ namespace iPhone_FrontEnd
 			_topBar.AddSubview (_flashButton);
 			_flipButton = new UIButton ();
 			_flipButton.SetImage (UIImage.FromFile ("front-camera.png"), UIControlState.Normal);
+			_flipButton.TouchUpInside+=OnFlipPress;
 			_topBar.AddSubview (_flipButton);
 			_blurButton = new UIButton ();
 			_blurButton.SetImage (UIImage.FromFile ("blur.png"), UIControlState.Normal);
@@ -201,6 +203,15 @@ namespace iPhone_FrontEnd
 
 		}
 
+		public bool FlipEnabled {
+			get{
+				return _flipButton.Enabled;
+			}
+			set{
+				_flipButton.Enabled = value;
+			}
+		}
+
 		public bool FlashEnabled {
 			get{
 				return _flashButton.Enabled;
@@ -221,6 +232,13 @@ namespace iPhone_FrontEnd
 		{
 			if (LibraryButtonPressed != null) {
 				LibraryButtonPressed.Invoke(this,e);
+			}
+		}
+
+		void OnFlipPress (object sender, EventArgs e)
+		{
+			if (FlipButtonPressed !=null) {
+				FlipButtonPressed.Invoke(this,e);
 			}
 		}
 	}

@@ -4,6 +4,7 @@ using MonoTouch.CoreFoundation;
 using GPUImage;
 using MonoTouch.AVFoundation;
 using MonoTouch.Foundation;
+using System.Drawing;
 
 namespace iPhone_FrontEnd
 {
@@ -25,6 +26,7 @@ namespace iPhone_FrontEnd
 		{
 			_imagePickerView =new ImagePickerView();
 			_imagePickerView.LibraryButtonPressed += SwitchToLibrary;
+			_imagePickerView.FlipButtonPressed += FlipCameraView;
 			this.View = _imagePickerView;
 			ViewDidLoad ();
 		}
@@ -40,11 +42,17 @@ namespace iPhone_FrontEnd
 			base.Dispose (disposing);
 
 		}
+		public override void ViewWillAppear (bool animated)
+		{
+			UIApplication.SharedApplication.SetStatusBarHidden (false, UIStatusBarAnimation.Slide);
+			base.ViewWillAppear (animated);
+		}
 		public override void ViewDidLoad ()
 		{
 			WantsFullScreenLayout = true;
 			_staticPictureOriginalOrientation = UIImageOrientation.Up;
-			SetFilter (4);
+			_cropFilter = new GPUImageCropFilter(new RectangleF(0f,0f,1f,0.75f));
+			_filter = new GPUImageFilter ();
 			SetupCamera();
 		}
 		public void OnPinch(UIPinchGestureRecognizer pinchGesture){
@@ -240,6 +248,21 @@ namespace iPhone_FrontEnd
 			imagePickerController.SourceType = UIImagePickerControllerSourceType.PhotoLibrary;
 			imagePickerController.AllowsEditing = true;
 			PresentViewController (imagePickerController, true, null);
+		}
+
+		void FlipCameraView (object sender, EventArgs e)
+		{
+			_imagePickerView.FlipEnabled = false;
+			_stillCamera.RotateCamera ();
+			_imagePickerView.FlipEnabled = true;
+			if (UIImagePickerController.IsSourceTypeAvailable (UIImagePickerControllerSourceType.Camera)) {
+				if(_stillCamera.InputCamera.FlashAvailable&&_stillCamera.InputCamera.TorchAvailable){
+					_imagePickerView.FlashEnabled = true;
+				}
+				else{
+					_imagePickerView.FlashEnabled = false;
+				}
+			}
 		}
 	}
 }

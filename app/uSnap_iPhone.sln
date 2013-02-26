@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iPhone_FrontEnd", "iPhone_FrontEnd\iPhone_FrontEnd.csproj", "{76400EC1-81CA-4F70-8B1B-33967C740FDF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uSnap.us", "iPhone_FrontEnd\uSnap.us.csproj", "{76400EC1-81CA-4F70-8B1B-33967C740FDF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GPUImage", "GPUImage\GPUImage.csproj", "{6D269E42-D179-41F4-9254-F79738E957C9}"
 EndProject
@@ -41,6 +41,6 @@ Global
 		{76400EC1-81CA-4F70-8B1B-33967C740FDF}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = iPhone_FrontEnd\iPhone_FrontEnd.csproj
+		StartupItem = iPhone_FrontEnd\uSnap.us.csproj
 	EndGlobalSection
 EndGlobal

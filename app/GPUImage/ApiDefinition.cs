@@ -39,6 +39,8 @@ namespace GPUImage
 	interface GPUImageVideoCamera : AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureAudioDataOutputSampleBufferDelegate{
 		[Export("inputCamera")]
 		AVCaptureDevice InputCamera{ get; }
+		[Export("rotateCamera")]
+		void RotateCamera();
 	}   
 	
 	[BaseType (typeof(GPUImageVideoCamera))]

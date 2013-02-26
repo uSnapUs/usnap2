@@ -4,6 +4,7 @@ using System.Linq;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using MonoTouch.TestFlight;
 
 namespace iPhone_FrontEnd
 {
@@ -35,7 +36,7 @@ namespace iPhone_FrontEnd
 			this.Window.RootViewController = defaultViewController;
 			this.Window.MakeKeyAndVisible();
 			this.Window.AutoresizingMask = UIViewAutoresizing.FlexibleHeight|UIViewAutoresizing.FlexibleWidth;
-
+			TestFlight.TakeOff ("cb83c24bf15386068af5ff255f6e46c6_NTgwNTAyMDEyLTAyLTA4IDA1OjA4OjE0LjkxNzcyNw");
 			return true;
 		}
 		

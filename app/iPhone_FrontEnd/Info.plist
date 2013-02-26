@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>MinimumOSVersion</key>
-	<string>6.1</string>
+	<string>5.0</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Fonts/Gelato Script.otf</string>
