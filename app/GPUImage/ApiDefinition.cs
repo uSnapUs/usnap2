@@ -101,7 +101,7 @@ namespace GPUImage
 	[BaseType (typeof(NSObject))]
 	[Model]
 	interface  GPUImageInput{
-		[Export("setInputRotation:atIndex")]
+		[Export("setInputRotation:atIndex:")]
 		void SetInputRotationAtIndex(GPUImageRotationMode newInputRotation,int textureIndex);
 	}
 	
@@ -111,6 +111,10 @@ namespace GPUImage
 		void AddTarget(NSObject newTarget);
 		[Export("removeAllTargets")]
 		void RemoveAllTargets();
+		[Export("imageFromCurrentlyProcessedOutput")]
+		UIImage ImageFromCurrentlyProcessedOutput();
+		[Export("imageFromCurrentlyProcessedOutputWithOrientation:")]
+		UIImage ImageFromCurrentlyProcessedOutputWithOrientation(UIImageOrientation imageOrientation);
 	}
 	[BaseType(typeof(GPUImageFilterGroup))]
 	interface GPUImageGaussianSelectiveBlurFilter{
@@ -126,6 +130,8 @@ namespace GPUImage
 	interface GPUImagePicture{
 		[Export("processImage")]
 		void ProcessImage();
+		[Export("initWithImage:smoothlyScaleOutput:")]
+		IntPtr Constructor(UIImage newImageSource,bool smoothlyScaleOutput);
 	}
 
 }

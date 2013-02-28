@@ -51,6 +51,7 @@ namespace iPhone_FrontEnd
 					var cb = _callback;
 					_callback = null;
 					cb(dictionary);
+
 				}
 			}
 			

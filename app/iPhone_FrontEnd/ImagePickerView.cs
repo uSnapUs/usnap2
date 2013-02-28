@@ -57,11 +57,17 @@ namespace iPhone_FrontEnd
 
 		UIButton _closeButton;
 
+		UIButton _retakeButton;
+
+		UIScrollView _filterScrollView;
+
 		UIPinchGestureRecognizer _pinchGestureRecogniser;
 
 		UITapGestureRecognizer _tapGestureRecogniser;
 
 		UIImageView _focusView;
+
+		UIImageView _filterScrollBackgroundView;
 
 		BlurOverlayView _blurOverlayView;
 
@@ -69,11 +75,17 @@ namespace iPhone_FrontEnd
 		public EventHandler<UITapEventArgs> ImageTapped;
 		public EventHandler<EventArgs> LibraryButtonPressed;
 		public EventHandler<EventArgs> FlipButtonPressed;
+		public EventHandler<EventArgs> ShutterButtonPressed;
+		public EventHandler<EventArgs> CloseButtonPressed;		
+		public EventHandler<EventArgs> RetakeButtonPressed;
+		public EventHandler<EventArgs> FilterButtonPressed;
 
 		public ImagePickerView ():base()
 		{
 			InitView();
+			SetupEvents ();
 		}
+
 
 		void InitView ()
 		{
@@ -88,9 +100,33 @@ namespace iPhone_FrontEnd
 			SetupTopBar ();
 			_focusView = new UIImageView (UIImage.FromFile ("focus-crosshair.png"));
 			_focusView.Alpha = 0;
-			_blurOverlayView = new BlurOverlayView (				new System.Drawing.RectangleF(
+			_blurOverlayView = new BlurOverlayView (new System.Drawing.RectangleF(
 				0, 0, _imageView.Frame.Width, _imageView.Frame.Height));
 			_imageView.AddSubview (_blurOverlayView);
+
+
+
+			_filterScrollView = new UIScrollView ();
+			_filterScrollView.ContentInset = new UIEdgeInsets{Bottom = 0,Top = 0, Left = 0, Right = 0};
+			_filterScrollView.ScrollIndicatorInsets = new UIEdgeInsets{Bottom = 0,Top = 0, Left = 0, Right = 0};
+			_filterScrollView.ScrollEnabled = true;
+			_filterScrollView.BouncesZoom = true;
+			_filterScrollView.DelaysContentTouches = true;
+			_filterScrollView.CanCancelContentTouches = true;
+			_filterScrollView.UserInteractionEnabled = true;
+			_filterScrollView.ClipsToBounds = true;
+			_filterScrollView.AutosizesSubviews = true;
+			_filterScrollView.ClearsContextBeforeDrawing = true;
+
+
+			_filterScrollBackgroundView = new UIImageView (UIImage.FromFile ("dock_bg.png"));
+			_filterScrollBackgroundView.Opaque = true;
+			_filterScrollBackgroundView.ClearsContextBeforeDrawing = true;
+			_filterScrollBackgroundView.AutosizesSubviews = true;
+
+
+			this.AddSubview (_filterScrollBackgroundView);
+			this.AddSubview (_filterScrollView);
 			this.AddSubview (_focusView);
 			this.AddSubview (_photoBar);
 			this.AddSubview(_imageView);
@@ -103,10 +139,24 @@ namespace iPhone_FrontEnd
 		
 		}
 
+		void SetupEvents ()
+		{
+			_libraryButton.TouchUpInside += OnLibraryPress;
+			_flipButton.TouchUpInside+=OnFlipPress;
+			_shutterButton.TouchUpInside += OnShutterPress;
+			_closeButton.TouchUpInside += OnClosePress;
+			_retakeButton.TouchUpInside += OnRetakePress;
+			_filterButton.TouchUpInside += OnFilterButtonPress;
+		}
+
 		void RemoveEvents ()
 		{
 			_libraryButton.TouchUpInside -= OnLibraryPress;
 			_flipButton.TouchUpInside -= OnFlipPress;
+			_shutterButton.TouchUpInside -= OnShutterPress;
+			_closeButton.TouchUpInside -= OnClosePress;
+			_retakeButton.TouchUpInside -= OnRetakePress;
+			_filterButton.TouchUpInside -= OnFilterButtonPress;
 		}
 
 		protected override void Dispose (bool disposing)
@@ -132,20 +182,7 @@ namespace iPhone_FrontEnd
 			_topBar = null;
 			base.Dispose (disposing);
 		}
-		void OnPinch (UIPinchGestureRecognizer gesture)
-		{
-			if (ImagePinched != null) {
-				ImagePinched.Invoke(this,new UIPinchEventArgs(gesture));
-			}
 
-		}
-
-		void OnTap (UITapGestureRecognizer gesture)
-		{
-			if (ImageTapped != null) {
-				ImageTapped.Invoke(this,new UITapEventArgs(gesture));
-			}
-		}
 
 		void SetupTopBar ()
 		{
@@ -155,7 +192,7 @@ namespace iPhone_FrontEnd
 			_topBar.AddSubview (_flashButton);
 			_flipButton = new UIButton ();
 			_flipButton.SetImage (UIImage.FromFile ("front-camera.png"), UIControlState.Normal);
-			_flipButton.TouchUpInside+=OnFlipPress;
+
 			_topBar.AddSubview (_flipButton);
 			_blurButton = new UIButton ();
 			_blurButton.SetImage (UIImage.FromFile ("blur.png"), UIControlState.Normal);
@@ -178,10 +215,14 @@ namespace iPhone_FrontEnd
 			_filterButton.Selected = false;
 			_libraryButton = new UIButton ();
 			_libraryButton.SetImage (UIImage.FromFile ("library.png"), UIControlState.Normal);
-			_libraryButton.TouchUpInside += OnLibraryPress;
+			_retakeButton = new UIButton ();
+			_retakeButton.SetTitle ("Retake", UIControlState.Normal);
+			_retakeButton.Hidden = true;
+			_retakeButton.SetBackgroundImage (UIImage.FromFile("camera-button.png"),UIControlState.Normal);
 			_photoBar.AddSubview (_shutterButton);
 			_photoBar.AddSubview (_filterButton);
 			_photoBar.AddSubview (_libraryButton);
+			_photoBar.AddSubview (_retakeButton);
 		}
 
 
@@ -200,27 +241,57 @@ namespace iPhone_FrontEnd
 			_shutterButton.Frame = new System.Drawing.RectangleF (115, 3, 90, 37);
 			_libraryButton.Frame = new System.Drawing.RectangleF (-8, 3, 65, 37);
 			_filterButton.Frame = new System.Drawing.RectangleF (263, 3, 65, 37);
+			_retakeButton.Frame = new System.Drawing.RectangleF (11, 7, 71, 29);
+			_filterScrollView.Frame = new System.Drawing.RectangleF (0, 437, 320, 75);
+			_filterScrollBackgroundView.Frame = new System.Drawing.RectangleF (-12, 435, 344, 75);
 
 		}
 
-		public bool FlipEnabled {
+		public UIButton ShutterButton {
 			get{
-				return _flipButton.Enabled;
-			}
-			set{
-				_flipButton.Enabled = value;
+				return _shutterButton;
 			}
 		}
 
-		public bool FlashEnabled {
+		public UIButton FlipButton {
 			get{
-				return _flashButton.Enabled;
-			}
-			set{
-				_flashButton.Enabled = value;
+				return _flipButton;
 			}
 		}
 
+		public UIButton FlashButton {
+			get{
+				return _flashButton;
+			}
+		}
+
+		public UIButton LibraryButton {
+			get {
+				return _libraryButton;
+			}
+		}
+		
+		public UIButton RetakeButton {
+			get {
+				return _retakeButton;
+			}
+		}
+		
+		public UIButton FiltersButton{
+			get {
+				return _filterButton;
+			}
+		}
+		public UIScrollView FilterScrollView {
+			get {
+				return _filterScrollView;
+			}
+		}
+		public UIImageView FilterScrollBackgroundView{
+			get{
+				return _filterScrollBackgroundView;
+			}
+		}
 		public GPUImageView ImageView {
 			get {
 				return _imageView;
@@ -239,6 +310,49 @@ namespace iPhone_FrontEnd
 		{
 			if (FlipButtonPressed !=null) {
 				FlipButtonPressed.Invoke(this,e);
+			}
+		}
+
+		void OnShutterPress (object sender, EventArgs e)
+		{
+			if (ShutterButtonPressed != null) {
+				ShutterButtonPressed.Invoke(this,e);
+			}
+		}
+
+		void OnClosePress (object sender, EventArgs e)
+		{
+			if (CloseButtonPressed != null) {
+				CloseButtonPressed.Invoke(this,e);
+			}
+		}
+
+		void OnRetakePress (object sender, EventArgs e)
+		{
+			if (RetakeButtonPressed != null) {
+				RetakeButtonPressed.Invoke(this,e);
+			}
+		}
+
+		void OnFilterButtonPress (object sender, EventArgs e)
+		{
+			if (FilterButtonPressed != null) {
+				FilterButtonPressed.Invoke(this,e);
+			}
+		}
+
+		void OnPinch (UIPinchGestureRecognizer gesture)
+		{
+			if (ImagePinched != null) {
+				ImagePinched.Invoke(this,new UIPinchEventArgs(gesture));
+			}
+			
+		}
+		
+		void OnTap (UITapGestureRecognizer gesture)
+		{
+			if (ImageTapped != null) {
+				ImageTapped.Invoke (this, new UITapEventArgs (gesture));
 			}
 		}
 	}

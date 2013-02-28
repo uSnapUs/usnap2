@@ -38,7 +38,7 @@ namespace iPhone_FrontEnd
 
 		void OnCameraButtonPressed (object sender, EventArgs e)
 		{
-			this.PresentViewController(new ImagePickerController(),true,()=>{this.Dispose ();});
+			this.PresentViewController(new ImagePickerController(),true,()=>{});
 			/*	
 			this._lastPhotoSource = UIImagePickerControllerSourceType.PhotoLibrary;
 				if (UIImagePickerController.IsSourceTypeAvailable (UIImagePickerControllerSourceType.Camera)) {

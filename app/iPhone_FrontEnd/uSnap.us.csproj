@@ -43,7 +43,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>False</ConsolePause>
-    <CodesignKey>iPhone Distribution: uSnap.us Limited</CodesignKey>
+    <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>True</MtouchDebug>
     <MtouchSdkVersion>6.1</MtouchSdkVersion>
     <IpaPackageName />
@@ -52,7 +52,6 @@
     <MtouchLink>Full</MtouchLink>
     <BuildIpa>True</BuildIpa>
     <CrashReportingApiKey>076e472d795137f4df4b5d12ec7cea788958e843</CrashReportingApiKey>
-    <CrashReportingEnabled>True</CrashReportingEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -62,6 +61,7 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>False</ConsolePause>
     <CodesignKey>iPhone Developer</CodesignKey>
+    <CrashReportingApiKey />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
     <DebugType>none</DebugType>
@@ -72,7 +72,7 @@
     <BuildIpa>True</BuildIpa>
     <ConsolePause>False</ConsolePause>
     <CodesignKey>iPhone Distribution: uSnap.us Limited</CodesignKey>
-    <CodesignProvision>52A040CA-1748-44AD-BAFC-73227E67C544</CodesignProvision>
+    <CodesignProvision>4F63E83B-2FEC-40E4-B1EC-8E8CA81A2442</CodesignProvision>
     <MtouchI18n />
     <MtouchArch>ARMv7</MtouchArch>
     <CrashReportingApiKey>076e472d795137f4df4b5d12ec7cea788958e843</CrashReportingApiKey>
@@ -101,7 +101,6 @@
     <Folder Include="Resources\" />
     <Folder Include="Fonts\" />
     <Folder Include="Resources\Curves\" />
-    <Folder Include="Filters\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -230,6 +229,26 @@
     <BundleResource Include="Resources\aqua.acv" />
     <BundleResource Include="Resources\purple-green.acv" />
     <BundleResource Include="Resources\yellow-red.acv" />
+    <BundleResource Include="Resources\1.jpg" />
+    <BundleResource Include="Resources\1%402x.jpg" />
+    <BundleResource Include="Resources\2.jpg" />
+    <BundleResource Include="Resources\2%402x.jpg" />
+    <BundleResource Include="Resources\3.jpg" />
+    <BundleResource Include="Resources\3%402x.jpg" />
+    <BundleResource Include="Resources\4.jpg" />
+    <BundleResource Include="Resources\4%402x.jpg" />
+    <BundleResource Include="Resources\5.jpg" />
+    <BundleResource Include="Resources\5%402x.jpg" />
+    <BundleResource Include="Resources\6.jpg" />
+    <BundleResource Include="Resources\6%402x.jpg" />
+    <BundleResource Include="Resources\7.jpg" />
+    <BundleResource Include="Resources\7%402x.jpg" />
+    <BundleResource Include="Resources\8.jpg" />
+    <BundleResource Include="Resources\8%402x.jpg" />
+    <BundleResource Include="Resources\9.jpg" />
+    <BundleResource Include="Resources\9%402x.jpg" />
+    <BundleResource Include="Resources\10.jpg" />
+    <BundleResource Include="Resources\10%402x.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Fonts\Gelato Script.otf" />

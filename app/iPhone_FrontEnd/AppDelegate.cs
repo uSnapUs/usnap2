@@ -30,13 +30,14 @@ namespace iPhone_FrontEnd
 		//
 		public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
 		{
+			//TestFlight.TakeOff ("cb83c24bf15386068af5ff255f6e46c6_NTgwNTAyMDEyLTAyLTA4IDA1OjA4OjE0LjkxNzcyNw");
 			application.SetStatusBarHidden(true,false);
 			this.Window = new UIWindow(UIScreen.MainScreen.Bounds);
 			var defaultViewController = new LandingPageViewController();
 			this.Window.RootViewController = defaultViewController;
 			this.Window.MakeKeyAndVisible();
 			this.Window.AutoresizingMask = UIViewAutoresizing.FlexibleHeight|UIViewAutoresizing.FlexibleWidth;
-			TestFlight.TakeOff ("cb83c24bf15386068af5ff255f6e46c6_NTgwNTAyMDEyLTAyLTA4IDA1OjA4OjE0LjkxNzcyNw");
+
 			return true;
 		}
 		

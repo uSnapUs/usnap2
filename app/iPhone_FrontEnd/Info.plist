@@ -28,5 +28,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>CFBundleDisplayName</key>
+	<string>uSnap.us</string>
+	<key>CFBundleIdentifier</key>
+	<string>us.usnap.camera</string>
+	<key>CFBundleVersion</key>
+	<string>2.0.1</string>
 </dict>
 </plist>
