@@ -56,6 +56,7 @@ namespace iPhone_FrontEnd
 			_imagePickerView.RetakeButtonPressed -= RetakePhoto;			
 			_imagePickerView.CloseButtonPressed -= CloseView;
 			_imagePickerView.FilterButtonPressed -= ToggleFilters;
+			_imagePickerView.ImageTapped -= FocusCamera;
 			foreach (var filterButton in _filterButtons) {
 				filterButton.TouchUpInside-=FilterSelected;
 			}
@@ -69,6 +70,7 @@ namespace iPhone_FrontEnd
 			_imagePickerView.CloseButtonPressed += CloseView;
 			_imagePickerView.RetakeButtonPressed += RetakePhoto;
 			_imagePickerView.FilterButtonPressed += ToggleFilters;
+			_imagePickerView.ImageTapped += FocusCamera;
 		}
 
 		public override void ViewWillAppear (bool animated)
@@ -535,6 +537,42 @@ namespace iPhone_FrontEnd
 				_imagePickerView.FilterScrollView.Hidden = true;
 				_imagePickerView.FilterScrollBackgroundView.Hidden = true;
 			});
+		}
+
+		void FocusCamera (object sender, UITapEventArgs e)
+		{
+			var tapGesture = e.gesture;
+			if (!_isStatic && tapGesture.State == UIGestureRecognizerState.Recognized) {
+				var location = tapGesture.LocationInView(_imagePickerView.ImageView);
+				var device = _stillCamera.InputCamera;
+				var pointOfInterest = new PointF(.5f,.5f);
+				var frameSize = _imagePickerView.ImageView.Frame.Size;
+				if(_stillCamera.CameraPosition() == AVCaptureDevicePosition.Front)
+				{
+					location.X = frameSize.Width-location.X;
+				}
+				pointOfInterest = new PointF(location.Y/frameSize.Height,1f-(location.X/frameSize.Width));
+				if(device.FocusPointOfInterestSupported&&device.IsFocusModeSupported(AVCaptureFocusMode.ModeAutoFocus)){
+					NSError error;
+					if(device.LockForConfiguration(out error)){
+						device.FocusPointOfInterest = pointOfInterest;
+						device.FocusMode = AVCaptureFocusMode.ModeAutoFocus;
+						if(device.ExposurePointOfInterestSupported&&device.IsExposureModeSupported(AVCaptureExposureMode.AutoExpose)){
+							device.ExposurePointOfInterest = pointOfInterest;
+							device.ExposureMode = AVCaptureExposureMode.AutoExpose;
+						}
+						_imagePickerView.FocusView.Center = tapGesture.LocationInView(View);
+						_imagePickerView.FocusView.Alpha = 1;
+						UIView.Animate(0.5,0.5,UIViewAnimationOptions.AllowAnimatedContent,()=>{
+							_imagePickerView.FocusView.Alpha = 0;
+						},null);
+						device.UnlockForConfiguration();
+					}
+					else{
+						Console.Write(error.ToString());
+					}
+				}
+			}
 		}
 	}
 }

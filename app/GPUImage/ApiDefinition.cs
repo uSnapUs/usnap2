@@ -41,6 +41,8 @@ namespace GPUImage
 		AVCaptureDevice InputCamera{ get; }
 		[Export("rotateCamera")]
 		void RotateCamera();
+		[Export("cameraPosition")]
+		AVCaptureDevicePosition CameraPosition();
 	}   
 	
 	[BaseType (typeof(GPUImageVideoCamera))]

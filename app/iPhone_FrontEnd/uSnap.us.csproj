@@ -100,7 +100,6 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Fonts\" />
-    <Folder Include="Resources\Curves\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

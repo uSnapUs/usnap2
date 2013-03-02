@@ -37,8 +37,6 @@ namespace iPhone_FrontEnd
 	{
 		GPUImageView _imageView;
 
-	
-
 		UIView _photoBar;
 
 		UIView _topBar;
@@ -127,14 +125,15 @@ namespace iPhone_FrontEnd
 
 			this.AddSubview (_filterScrollBackgroundView);
 			this.AddSubview (_filterScrollView);
-			this.AddSubview (_focusView);
+
 			this.AddSubview (_photoBar);
 			this.AddSubview(_imageView);
+			this.AddSubview (_focusView);
 			this.AddSubview (_topBar);
 
 			_pinchGestureRecogniser = new UIPinchGestureRecognizer ((gesture)=>OnPinch(gesture));
 			_tapGestureRecogniser = new UITapGestureRecognizer((gesture)=>OnTap(gesture));
-			_imageView.AddGestureRecognizer (_pinchGestureRecogniser);
+			_imageView.AddGestureRecognizer (_tapGestureRecogniser);
 
 		
 		}
@@ -290,6 +289,11 @@ namespace iPhone_FrontEnd
 		public UIImageView FilterScrollBackgroundView{
 			get{
 				return _filterScrollBackgroundView;
+			}
+		}
+		public UIImageView FocusView{
+			get{
+				return _focusView;
 			}
 		}
 		public GPUImageView ImageView {
