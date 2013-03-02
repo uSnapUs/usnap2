@@ -25,6 +25,8 @@ namespace iPhone_FrontEnd
 		GPUImagePicture _staticPicture;
 		UIImageOrientation _staticPictureOriginalOrientation;
 		List<UIButton> _filterButtons = new List<UIButton> ();
+
+
 		int _selectedFilter = 0;
 
 		public ImagePickerController ():base()
@@ -56,7 +58,9 @@ namespace iPhone_FrontEnd
 			_imagePickerView.RetakeButtonPressed -= RetakePhoto;			
 			_imagePickerView.CloseButtonPressed -= CloseView;
 			_imagePickerView.FilterButtonPressed -= ToggleFilters;
+			_imagePickerView.FlashButtonPressed -= ToggleFlash;
 			_imagePickerView.ImageTapped -= FocusCamera;
+			_imagePickerView.ImagePinched -= HandlePinch;
 			foreach (var filterButton in _filterButtons) {
 				filterButton.TouchUpInside-=FilterSelected;
 			}
@@ -70,7 +74,10 @@ namespace iPhone_FrontEnd
 			_imagePickerView.CloseButtonPressed += CloseView;
 			_imagePickerView.RetakeButtonPressed += RetakePhoto;
 			_imagePickerView.FilterButtonPressed += ToggleFilters;
+			_imagePickerView.FlashButtonPressed += ToggleFlash;
+
 			_imagePickerView.ImageTapped += FocusCamera;
+			_imagePickerView.ImagePinched += HandlePinch;
 		}
 
 		public override void ViewWillAppear (bool animated)
@@ -92,6 +99,7 @@ namespace iPhone_FrontEnd
 			LoadFilters ();
 			_cropFilter = new GPUImageCropFilter(new RectangleF(0f,0f,1f,0.75f));
 			_filter = new GPUImageFilter ();
+
 			SetupCamera();
 		}
 		public void OnPinch(UIPinchGestureRecognizer pinchGesture){
@@ -455,10 +463,11 @@ namespace iPhone_FrontEnd
 		{
 			NSError error;
 			_stillCamera.InputCamera.LockForConfiguration(out error);
-			if (_imagePickerView.FlashButton.Enabled && _stillCamera.InputCamera.TorchAvailable) {
+			if (_imagePickerView.FlashButton.Selected && _stillCamera.InputCamera.IsTorchModeSupported(AVCaptureTorchMode.On)) {
 				_stillCamera.InputCamera.TorchMode = AVCaptureTorchMode.On;
 				NSTimer.CreateScheduledTimer(0.25,()=>{CaptureImage();});
-			} else {
+			}
+			else {
 				CaptureImage();
 			}
 		}
@@ -573,6 +582,16 @@ namespace iPhone_FrontEnd
 					}
 				}
 			}
+		}
+
+		void ToggleFlash (object sender, EventArgs e)
+		{
+			_imagePickerView.FlashButton.Selected = !_imagePickerView.FlashButton.Selected;
+		}
+
+		void HandlePinch (object sender, UIPinchEventArgs e)
+		{
+
 		}
 	}
 }

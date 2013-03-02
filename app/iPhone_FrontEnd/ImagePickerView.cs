@@ -77,7 +77,7 @@ namespace iPhone_FrontEnd
 		public EventHandler<EventArgs> CloseButtonPressed;		
 		public EventHandler<EventArgs> RetakeButtonPressed;
 		public EventHandler<EventArgs> FilterButtonPressed;
-
+		public EventHandler<EventArgs> FlashButtonPressed;
 		public ImagePickerView ():base()
 		{
 			InitView();
@@ -146,6 +146,7 @@ namespace iPhone_FrontEnd
 			_closeButton.TouchUpInside += OnClosePress;
 			_retakeButton.TouchUpInside += OnRetakePress;
 			_filterButton.TouchUpInside += OnFilterButtonPress;
+			_flashButton.TouchUpInside += OnFlashButtonPress;
 		}
 
 		void RemoveEvents ()
@@ -156,6 +157,7 @@ namespace iPhone_FrontEnd
 			_closeButton.TouchUpInside -= OnClosePress;
 			_retakeButton.TouchUpInside -= OnRetakePress;
 			_filterButton.TouchUpInside -= OnFilterButtonPress;
+			_flashButton.TouchUpInside -= OnFlashButtonPress;
 		}
 
 		protected override void Dispose (bool disposing)
@@ -210,7 +212,7 @@ namespace iPhone_FrontEnd
 			_shutterButton.SetBackgroundImage (UIImage.FromFile ("camera-button.png"), UIControlState.Normal);
 			_filterButton = new UIButton ();
 			_filterButton.SetImage (UIImage.FromFile ("filter-open.png"), UIControlState.Normal);
-			_filterButton.SetImage (UIImage.FromFile ("filter-closed.png"), UIControlState.Selected);
+			_filterButton.SetImage (UIImage.FromFile ("filter-close.png"), UIControlState.Selected);
 			_filterButton.Selected = false;
 			_libraryButton = new UIButton ();
 			_libraryButton.SetImage (UIImage.FromFile ("library.png"), UIControlState.Normal);
@@ -342,6 +344,13 @@ namespace iPhone_FrontEnd
 		{
 			if (FilterButtonPressed != null) {
 				FilterButtonPressed.Invoke(this,e);
+			}
+		}
+
+		void OnFlashButtonPress (object sender, EventArgs e)
+		{
+			if (FlashButtonPressed != null) {
+				FlashButtonPressed.Invoke (this,e);
 			}
 		}
 
