@@ -39,7 +39,7 @@ namespace iPhone_FrontEnd
 			this.Window.RootViewController = defaultViewController;
 			this.Window.MakeKeyAndVisible();
 			this.Window.AutoresizingMask = UIViewAutoresizing.FlexibleHeight|UIViewAutoresizing.FlexibleWidth;
-
+            
 			return true;
 		}
 		

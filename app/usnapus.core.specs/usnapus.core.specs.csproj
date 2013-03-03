@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="AuthorisationSpecification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimpleJson.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
