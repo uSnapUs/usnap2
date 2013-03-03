@@ -2,6 +2,7 @@ using System;
 using MonoTouch.UIKit;
 using MonoTouch.MapKit;
 using MonoTouch.CoreLocation;
+using MonoTouch.FacebookConnect;
 
 namespace iPhone_FrontEnd
 {
@@ -17,7 +18,7 @@ namespace iPhone_FrontEnd
 
 		UIButton _createButton;
 
-		UIButton _myEventsButton;
+		FBLoginView _loginButton;
 
 		UIButton _backButton;
 
@@ -50,6 +51,12 @@ namespace iPhone_FrontEnd
 		public EventHandler<EventArgs> FindNearbyButtonPressed;
 
 		public EventHandler<EventArgs> JoinButtonPressed;
+
+		public FBLoginView LoginButton {
+			get{
+				return _loginButton;
+			}
+		}
 
 		public LandingPageView ():base()
 		{
@@ -96,7 +103,9 @@ namespace iPhone_FrontEnd
 
 
 			_createButton.Frame = new System.Drawing.RectangleF((horizontalMiddle-(234/2)),_findButton.Frame.Y+_findButton.Frame.Height+5,234,63);
-			_myEventsButton.Frame = new System.Drawing.RectangleF((horizontalMiddle-(234/2)),_createButton.Frame.Y+_createButton.Frame.Height+5,234,63);
+			//_myEventsButton.Frame = new System.Drawing.RectangleF((horizontalMiddle-(234/2)),_createButton.Frame.Y+_createButton.Frame.Height+5,234,63);
+			_loginButton.Frame = new System.Drawing.RectangleF (horizontalMiddle - (_loginButton.Frame.Width / 2), _createButton.Frame.Y + _createButton.Frame.Height + 5, _loginButton.Frame.Width, _loginButton.Frame.Height);
+			_loginButton.SizeToFit ();
 			_findNearbyButton.Frame = new System.Drawing.RectangleF((horizontalMiddle-(234/2)),_mapView.Frame.Height-63-10,234,63);
 			_backButton.Frame = new System.Drawing.RectangleF(10,10+viewOffset+_extraOffset,25,25);
 			_infoButton.Frame = new System.Drawing.RectangleF(width-23-10,height-23-10,23,23);
@@ -129,7 +138,7 @@ namespace iPhone_FrontEnd
 			};
 			_findButton = new UIButton();
 			_createButton = new UIButton();
-			_myEventsButton = new UIButton();
+			_loginButton = new FBLoginView(new []{"email"});
 			_infoButton = new UIButton();
 			_joinButton = new UIButton(){Hidden=true};
 			_eventIdView = new UIImageView{
@@ -160,7 +169,7 @@ namespace iPhone_FrontEnd
 			_backButton = new UIButton{Hidden=true};
 			_findButton.SetBackgroundImage(UIImage.FromFile(@"Button_Find.png"),UIControlState.Normal);
 			_createButton.SetBackgroundImage(UIImage.FromFile(@"Button_Create.png"),UIControlState.Normal);
-			_myEventsButton.SetBackgroundImage(UIImage.FromFile(@"Button_MyEvents.png"),UIControlState.Normal);
+			//_myEventsButton.SetBackgroundImage(UIImage.FromFile(@"Button_MyEvents.png"),UIControlState.Normal);
 			_infoButton.SetBackgroundImage(UIImage.FromFile(@"Button_Info.png"),UIControlState.Normal);
 			_backButton.SetBackgroundImage(UIImage.FromFile(@"Button_Back.png"),UIControlState.Normal);
 			_findNearbyButton.SetBackgroundImage(UIImage.FromFile(@"Button_FindNearby.png"),UIControlState.Normal);
@@ -180,7 +189,7 @@ namespace iPhone_FrontEnd
 			_landingView.AddSubview(_taglineView);
 			_landingView.AddSubview(_findButton);
 			_landingView.AddSubview(_createButton);
-			_landingView.AddSubview(_myEventsButton);
+			_landingView.AddSubview(_loginButton);
 			_landingView.AddSubview(_backButton);
 			_landingView.AddSubview(_infoButton);
 			_landingView.AddSubview(_taglineView2);
@@ -252,7 +261,7 @@ namespace iPhone_FrontEnd
 		{
 			_findButton.TouchUpInside += OnFindButtonPress;
 			_createButton.TouchUpInside += OnCreateButtonPress;
-			_myEventsButton.TouchUpInside += OnMyEventButtonPress;
+			//_myEventsButton.Unbind	 += OnMyEventButtonPress;
 			_backButton.TouchUpInside += OnBackButtonPress;
 			_findNearbyButton.TouchUpInside+=OnFindNearbyPress;
 			_eventIdField.EditingDidBegin+=OnEventIdEditBegin;
@@ -265,7 +274,7 @@ namespace iPhone_FrontEnd
 		{
 			this._findButton.Hidden = true;
 			this._createButton.Hidden=true;
-			this._myEventsButton.Hidden = true;
+			this._loginButton.Hidden = true;
 			this._taglineView.Hidden = true;
 			this._infoButton.Hidden=true;
 			viewOffset = 100;
@@ -299,7 +308,7 @@ namespace iPhone_FrontEnd
 				
 				this._findButton.Hidden = false;
 				this._createButton.Hidden=false;
-				this._myEventsButton.Hidden = false;
+				this._loginButton.Hidden = false;
 				this._taglineView.Hidden = false;
 				this._infoButton.Hidden=false;
 
@@ -326,7 +335,7 @@ namespace iPhone_FrontEnd
 
 			_findButton.TouchUpInside -= OnFindButtonPress;
 			_createButton.TouchUpInside -= OnCreateButtonPress;
-			_myEventsButton.TouchUpInside -= OnMyEventButtonPress;
+			//_myEventsButton.TouchUpInside -= OnMyEventButtonPress;
 			_backButton.TouchUpInside -= OnBackButtonPress;
 			_findNearbyButton.TouchUpInside-=OnFindNearbyPress;
 			_eventIdField.EditingDidBegin-=OnEventIdEditBegin;
@@ -343,7 +352,7 @@ namespace iPhone_FrontEnd
 			_taglineView = null;
 			_findButton = null;			
 			_createButton = null;			
-			_myEventsButton = null;			
+			_loginButton = null;			
 			_backButton = null;			
 			_findNearbyButton = null;			
 			_mapView = null;			

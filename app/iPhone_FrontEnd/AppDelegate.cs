@@ -5,6 +5,7 @@ using System.Linq;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using MonoTouch.TestFlight;
+using MonoTouch.FacebookConnect;
 
 namespace iPhone_FrontEnd
 {
@@ -33,6 +34,7 @@ namespace iPhone_FrontEnd
 			//TestFlight.TakeOff ("cb83c24bf15386068af5ff255f6e46c6_NTgwNTAyMDEyLTAyLTA4IDA1OjA4OjE0LjkxNzcyNw");
 			application.SetStatusBarHidden(true,false);
 			this.Window = new UIWindow(UIScreen.MainScreen.Bounds);
+			var login = new FBLoginView ();
 			var defaultViewController = new LandingPageViewController();
 			this.Window.RootViewController = defaultViewController;
 			this.Window.MakeKeyAndVisible();

@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using MonoTouch.CoreLocation;
 using System.Linq;
 using System.Diagnostics;
+using MonoTouch.FacebookConnect;
 
 namespace iPhone_FrontEnd
 {
@@ -29,7 +30,9 @@ namespace iPhone_FrontEnd
 			_landingPageView.FindNearbyButtonPressed+=OnFindNearbyButtonPress;
 			_landingPageView.JoinButtonPressed+=OnJoinButtonPress;
 			_landingPageView.CreateButtonPressed+=OnCreateButtonPress;
+			_landingPageView.LoginButton.Delegate = new LoginDelegate ();
 			this.View = _landingPageView;
+
 		}
 	
 		public override UIInterfaceOrientationMask GetSupportedInterfaceOrientations ()
@@ -103,6 +106,13 @@ namespace iPhone_FrontEnd
 			this.PresentViewController(createEventViewController,true,()=>{this.Dispose ();});
 		}
 
+		void LoginToFacebook (object sender, EventArgs e)
+		{
+			var session = new FBSession ();
+			session.Open((FBSession s, FBSessionState status, NSError error) => 
+			                                     {});
+		}
+
 		void UnwireEvents ()
 		{
 			_landingPageView.FindButtonPressed-=OnFindButtonPress;
@@ -110,6 +120,7 @@ namespace iPhone_FrontEnd
 			_landingPageView.FindNearbyButtonPressed-=OnFindNearbyButtonPress;
 			_landingPageView.JoinButtonPressed-=OnJoinButtonPress;
 			_landingPageView.CreateButtonPressed-=OnCreateButtonPress;
+			_landingPageView.MyEventsButtonPressed -= LoginToFacebook;
 		}
 
 		protected override void Dispose (bool disposing)

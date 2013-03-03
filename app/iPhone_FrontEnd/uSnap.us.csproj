@@ -96,10 +96,14 @@
     <Reference Include="TestFlight">
       <HintPath>..\lib\TestFlight.dll</HintPath>
     </Reference>
+    <Reference Include="Facebook">
+      <HintPath>..\lib\Facebook.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Fonts\" />
+    <Folder Include="FacebookSDKResources.bundle\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -138,6 +142,7 @@
     <Compile Include="CreateEventViewController.cs" />
     <Compile Include="CreateEventView.cs" />
     <Compile Include="BlurOverlayView.cs" />
+    <Compile Include="LoginDelegate.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -248,6 +253,22 @@
     <BundleResource Include="Resources\9%402x.jpg" />
     <BundleResource Include="Resources\10.jpg" />
     <BundleResource Include="Resources\10%402x.jpg" />
+    <BundleResource Include="FacebookSDKResources.bundle\Contents\Resources\en.lproj\Localizable.strings" />
+    <BundleResource Include="FacebookSDKResources.bundle\Contents\Resources\he.lproj\Localizable.strings" />
+    <BundleResource Include="FacebookSDKResources.bundle\FBDialog\images\close.png" />
+    <BundleResource Include="FacebookSDKResources.bundle\FBDialog\images\close%402x.png" />
+    <BundleResource Include="FacebookSDKResources.bundle\FBDialog\images\fbicon.png" />
+    <BundleResource Include="FacebookSDKResources.bundle\FBFriendPickerView\images\default.png" />
+    <BundleResource Include="FacebookSDKResources.bundle\FBLoginView\images\bluetint.png" />
+    <BundleResource Include="FacebookSDKResources.bundle\FBLoginView\images\f_logo.png" />
+    <BundleResource Include="FacebookSDKResources.bundle\FBLoginView\images\facebook.png" />
+    <BundleResource Include="FacebookSDKResources.bundle\FBLoginView\images\login-button-small-pressed.png" />
+    <BundleResource Include="FacebookSDKResources.bundle\FBLoginView\images\login-button-small-pressed%402x.png" />
+    <BundleResource Include="FacebookSDKResources.bundle\FBLoginView\images\login-button-small.png" />
+    <BundleResource Include="FacebookSDKResources.bundle\FBLoginView\images\login-button-small%402x.png" />
+    <BundleResource Include="FacebookSDKResources.bundle\FBPlacePickerView\images\fb_generic_place.png" />
+    <BundleResource Include="FacebookSDKResources.bundle\FBProfilePictureView\images\fb_blank_profile_portrait.png" />
+    <BundleResource Include="FacebookSDKResources.bundle\FBProfilePictureView\images\fb_blank_profile_square.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Fonts\Gelato Script.otf" />
