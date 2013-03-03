@@ -99,6 +99,9 @@
     <Reference Include="Facebook">
       <HintPath>..\lib\Facebook.dll</HintPath>
     </Reference>
+    <Reference Include="GPUImage">
+      <HintPath>..\lib\GPUImage.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -282,11 +285,5 @@
     <Content Include="Fonts\ProximaNova-Regular.otf" />
     <Content Include="Fonts\ProximaNova-Semibold.otf" />
     <Content Include="Fonts\ProximaNova-SemiboldItalic.otf" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\GPUImage\GPUImage.csproj">
-      <Project>{6D269E42-D179-41F4-9254-F79738E957C9}</Project>
-      <Name>GPUImage</Name>
-    </ProjectReference>
   </ItemGroup>
 </Project>
