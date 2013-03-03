@@ -72,7 +72,7 @@
     <BuildIpa>True</BuildIpa>
     <ConsolePause>False</ConsolePause>
     <CodesignKey>iPhone Distribution: uSnap.us Limited</CodesignKey>
-    <CodesignProvision>4F63E83B-2FEC-40E4-B1EC-8E8CA81A2442</CodesignProvision>
+    <CodesignProvision>543FAA2E-05B1-4FA7-82AE-5D975688DBBC</CodesignProvision>
     <MtouchI18n />
     <MtouchArch>ARMv7</MtouchArch>
     <CrashReportingApiKey>076e472d795137f4df4b5d12ec7cea788958e843</CrashReportingApiKey>
