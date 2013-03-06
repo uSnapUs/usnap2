@@ -18,7 +18,7 @@ namespace usnapus.core
             var request = _webRequestFactory.Create(uri);
             request.Method = "POST";
             var credentialCache = new System.Net.CredentialCache();
-            credentialCache.add(uri,"Digest", new NetworkCredential("device",deviceId.ToString("N")));
+            credentialCache.Add(uri,"Digest", new NetworkCredential("device",deviceId.ToString("N")));
             request.Credentials = credentialCache;
             return "";
         }
