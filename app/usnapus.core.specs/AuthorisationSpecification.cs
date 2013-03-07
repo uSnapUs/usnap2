@@ -6,6 +6,7 @@ using System.Net;
 using System.Text;
 using Machine.Fakes;
 using Machine.Specifications;
+using uSnapUs.Core;
 
 namespace usnapus.core.specs
 {

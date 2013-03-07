@@ -2,7 +2,7 @@
 using System.IO;
 using System.Net;
 
-namespace usnapus.core
+namespace uSnapUs.Core
 {
     public class AuthorisationHandler
     {

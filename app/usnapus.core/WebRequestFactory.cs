@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Net;
-namespace usnapus.core
+namespace uSnapUs.Core
 {
     public interface IWebRequestFactory
     {

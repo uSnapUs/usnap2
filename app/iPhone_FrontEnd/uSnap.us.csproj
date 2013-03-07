@@ -103,47 +103,65 @@
       <HintPath>..\lib\GPUImage.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-    <Folder Include="Fonts\" />
-    <Folder Include="FacebookSDKResources.bundle\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Info.plist" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\uSnapUs.Core\AuthorisationHandler.cs">
+      <Link>Core\AuthorisationHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\uSnapUs.Core\Presenters\IBaseViewController.cs">
+      <Link>Core\Presenters\IBaseViewController.cs</Link>
+    </Compile>
+    <Compile Include="..\uSnapUs.Core\Presenters\ILandingViewController.cs">
+      <Link>Core\Presenters\ILandingViewController.cs</Link>
+    </Compile>
+    <Compile Include="..\uSnapUs.Core\SimpleJson.cs">
+      <Link>Core\SimpleJson.cs</Link>
+    </Compile>
+    <Compile Include="..\uSnapUs.Core\Supervisors\LandingViewControllerSupervisor.cs">
+      <Link>Core\Supervisor\LandingViewControllerSupervisor.cs</Link>
+    </Compile>
+    <Compile Include="..\uSnapUs.Core\Views\ILandingPageView.cs">
+      <Link>Core\Views\ILandingPageView.cs</Link>
+    </Compile>
+    <Compile Include="..\uSnapUs.Core\WebRequestFactory.cs">
+      <Link>Core\WebRequestFactory.cs</Link>
+    </Compile>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="LandingPageViewController.cs" />
-    <Compile Include="LandingPageViewController.designer.cs">
-      <DependentUpon>LandingPageViewController.cs</DependentUpon>
+    <Compile Include="Controllers\LandingViewController.cs" />
+    <Compile Include="Controllers\LandingViewController.designer.cs">
+      <DependentUpon>LandingViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="MapKitHelpers.cs" />
     <Compile Include="ImediateSegue.cs" />
     <Compile Include="ImediateSegue.designer.cs">
       <DependentUpon>ImediateSegue.cs</DependentUpon>
     </Compile>
-    <Compile Include="EventDashboardViewController.cs" />
-    <Compile Include="EventDashboardViewController.designer.cs">
+    <Compile Include="Controllers\EventDashboardViewController.cs" />
+    <Compile Include="Controllers\EventDashboardViewController.designer.cs">
       <DependentUpon>EventDashboardViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="LandingPageView.cs" />
+    <Compile Include="Views\LandingPageView.cs" />
     <Compile Include="ButtonView.cs" />
-    <Compile Include="FindNearbyMapView.cs" />
-    <Compile Include="EventDashboardView.cs" />
-    <Compile Include="ImagePickerController.cs" />
-    <Compile Include="ImagePickerView.cs" />
+    <Compile Include="Views\FindNearbyMapView.cs" />
+    <Compile Include="Views\EventDashboardView.cs" />
+    <Compile Include="Controllers\ImagePickerController.cs" />
+    <Compile Include="Views\ImagePickerView.cs" />
     <Compile Include="Camera.cs" />
-    <Compile Include="FindNearbyEventViewController.cs" />
-    <Compile Include="FindNearbyView.cs" />
-    <Compile Include="FindNearbyEventViewController.designer.cs">
+    <Compile Include="Controllers\FindNearbyEventViewController.cs" />
+    <Compile Include="Views\FindNearbyView.cs" />
+    <Compile Include="Controllers\FindNearbyEventViewController.designer.cs">
       <DependentUpon>FindNearbyEventViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="StreamTableData.cs" />
     <Compile Include="UILabelWithShadow.cs" />
-    <Compile Include="EventPhotoCell.cs" />
-    <Compile Include="CreateEventViewController.cs" />
-    <Compile Include="CreateEventView.cs" />
+    <Compile Include="Views\EventPhotoCell.cs" />
+    <Compile Include="Controllers\CreateEventViewController.cs" />
+    <Compile Include="Views\CreateEventView.cs" />
     <Compile Include="BlurOverlayView.cs" />
     <Compile Include="LoginDelegate.cs" />
   </ItemGroup>

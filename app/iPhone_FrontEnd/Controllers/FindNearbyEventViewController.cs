@@ -39,7 +39,7 @@ namespace iPhone_FrontEnd
 		}
 		void OnBackButtonPressed (object sender, EventArgs e)
 		{
-			var landingView = new LandingPageViewController();
+			var landingView = new LandingViewController();
 			this.PresentViewController(landingView,true,()=>{this.Dispose();});
 
 		}

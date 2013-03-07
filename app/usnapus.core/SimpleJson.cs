@@ -61,12 +61,12 @@ using System.Globalization;
 using System.Reflection;
 using System.Runtime.Serialization;
 using System.Text;
-using usnapus.core.Reflection;
+using uSnapUs.Core.Reflection;
 
 // ReSharper disable LoopCanBeConvertedToQuery
 // ReSharper disable RedundantExplicitArrayCreation
 // ReSharper disable SuggestUseVarKeywordEvident
-namespace usnapus.core
+namespace uSnapUs.Core
 {
     /// <summary>
     /// Represents the json array.
@@ -479,7 +479,7 @@ namespace usnapus.core
     }
 }
 
-namespace usnapus.core
+namespace uSnapUs.Core
 {
     /// <summary>
     /// This class encodes and decodes JSON strings.

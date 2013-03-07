@@ -11,21 +11,33 @@ using MonoTouch.FacebookConnect;
 
 namespace iPhone_FrontEnd
 {
-	class LoginDelegate:FBLoginViewDelegate
-	{
-		public override void ShowingLoggedInUser (FBLoginView loginView)
-		{
-			Console.WriteLine ("logged in");
+    class LoginDelegate:FBLoginViewDelegate
+    {
+        event EventHandler<EventArgs> ShowLoggedInUser;
+        event EventHandler<EventArgs> ShowLoggedOutUser;
+        event EventHandler<EventArgs> FetchUserInfo;
+        public override void ShowingLoggedInUser (FBLoginView loginView)
+        {
+            if (ShowLoggedInUser!=null)
+            {
+                ShowLoggedInUser.Invoke(this, null);
+            }
 
-		}
-		public override void ShowingLoggedOutUser (FBLoginView loginView)
-		{
-			Console.WriteLine ("logged out");
-		}
-		public override void FetchedUserInfo (FBLoginView loginView, FBGraphUser user)
-		{
-			Console.WriteLine ("found user {0}", user);
-		}
-	}
+        }
+        public override void ShowingLoggedOutUser (FBLoginView loginView)
+        {
+            if (ShowLoggedOutUser != null)
+            {
+                ShowLoggedOutUser.Invoke(this, new EventArgs());
+            }
+        }
+        public override void FetchedUserInfo (FBLoginView loginView, FBGraphUser user)
+        {
+            if (FetchUserInfo != null)
+            {
+                FetchUserInfo.Invoke(this, new EventArgs());
+            }
+        }
+    }
 
 }
