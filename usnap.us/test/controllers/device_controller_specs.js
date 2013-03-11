@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 require("../../models/device");
 var Device = mongoose.model('Device');
-var devices = require("../../controllers/devices");
+var devices = require("../../controllers/device_controller");
 var should = require('should');
 var sinon = require('sinon');
 describe('DeviceController',function(){
