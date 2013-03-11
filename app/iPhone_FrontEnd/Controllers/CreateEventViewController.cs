@@ -16,7 +16,7 @@ namespace iPhone_FrontEnd
 
 		void OnBackPress (object sender, EventArgs e)
 		{
-			var landingView = new LandingPageViewController();
+			var landingView = new LandingViewController();
 			landingView.ModalTransitionStyle = UIModalTransitionStyle.FlipHorizontal;
 			PresentViewController(landingView,true,()=>{Dispose ();});
 		}

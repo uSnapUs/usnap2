@@ -8,8 +8,8 @@ using MonoTouch.Foundation;
 
 namespace iPhone_FrontEnd
 {
-	[Register ("LandingPageViewController")]
-	partial class LandingPageViewController
+	[Register ("LandingViewController")]
+	partial class LandingViewController
 	{
 
 	}
