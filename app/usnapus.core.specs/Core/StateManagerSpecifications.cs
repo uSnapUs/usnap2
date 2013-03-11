@@ -26,7 +26,11 @@ namespace usnapus.core.specs.Core
                         Server = (_server = An<IServer>()),
                         MessageHub = An<ITinyMessengerHub>(),
                     };
-                    _sut.Server.WhenToldTo(s => s.RegisterDevice(Moq.It.IsAny<DeviceRegistration>())).Return((DeviceRegistration d) => d);
+                    _sut.Server.WhenToldTo(s => s.RegisterDevice(Moq.It.IsAny<DeviceRegistration>())).Return((
+                        DeviceRegistration d) =>
+                        {
+                            return d;
+                        });
                 };
 
             Cleanup cleanup = () =>
