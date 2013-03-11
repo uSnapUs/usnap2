@@ -130,7 +130,7 @@ namespace uSnapUs.Core
 
        
 
-        public void UpdateDeviceRegistration(string s, string name, string email)
+        public void UpdateDeviceRegistration(string name, string email,string facebookId)
         {
 
             Logger.Trace("enter");
@@ -140,6 +140,7 @@ namespace uSnapUs.Core
                 {
                     _currentDeviceRegistration.Name = name;
                     _currentDeviceRegistration.Email = email;
+                    _currentDeviceRegistration.FacebookId = facebookId;
                     var savedDevice = Server.RegisterDevice(_currentDeviceRegistration);
                     if (savedDevice != null)
                     {
@@ -155,6 +156,7 @@ namespace uSnapUs.Core
                                                                       {
                                                                           Email = email,
                                                                           Name = name,
+                                                                          FacebookId = facebookId,
                                                                           Guid = Guid.NewGuid().ToString("N")
                                                                       });
             }

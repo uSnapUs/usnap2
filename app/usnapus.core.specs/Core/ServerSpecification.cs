@@ -63,7 +63,7 @@ namespace usnapus.core.specs.Core
 
                 _sut = new Server(An<ITinyMessengerHub>())
                 {
-                    RestClientFactory = new RestClientFactory(){Proxy = new WebProxy("localhost",8888)},
+                    RestClientFactory = new RestClientFactory(),
                     BaseUrl = _baseUrl
                 };
             };
@@ -92,7 +92,7 @@ namespace usnapus.core.specs.Core
 
             static DeviceRegistration _serverDeviceRegistration = new DeviceRegistration {
                 Guid = "0F0F187A-9AD5-461A-BB56-810BFEF41553",
-                ServerId = 1
+                Id = "TESTID"
             };
 
             static DeviceRegistration _result;
@@ -108,6 +108,7 @@ namespace usnapus.core.specs.Core
             {
                 
                 Guid = "0F0F187A-9AD5-461A-BB56-810BFEF41553",
+                Name="test device"
 
             };
 

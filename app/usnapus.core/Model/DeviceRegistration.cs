@@ -1,19 +1,31 @@
+using System;
+using System.Runtime.Serialization;
+using Newtonsoft.Json;
+using RestSharp.Serializers;
+
 namespace uSnapUs.Core.Model
 {
-	public class DeviceRegistration
-	{
-		[PrimaryKey,AutoIncrement]
-		public int Id{get;set;}
+    [DataContract]
+    public class DeviceRegistration
+    {
+        [PrimaryKey,AutoIncrement]
+        [JsonIgnore()]
+        public int InternalId{get;set;}
 
-		public string Name{get;set;}
+        [JsonProperty(PropertyName = "name")]
+        public string Name{get;set;}
 
-		public string Email{get;set;}
+        [JsonProperty(PropertyName = "email")]
+        public string Email{get;set;}
 
-		public string Guid{get;set;}
+        [JsonProperty(PropertyName = "guid")]
+        public string Guid{get;set;}
 
-	    public int ServerId { get; set; }
+        [JsonProperty(PropertyName = "id")]
+        public string Id { get; set; }
 
-	    public string FacebookId { get; set; }
-	}
+        [JsonProperty(PropertyName = "facebook_id")]
+        public string FacebookId { get; set; }
+    }
 }
 

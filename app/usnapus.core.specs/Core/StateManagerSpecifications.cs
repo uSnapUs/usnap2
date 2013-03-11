@@ -20,11 +20,14 @@ namespace usnapus.core.specs.Core
         {
             protected static StateManager _sut;
 
-            Establish context = () => _sut = new StateManager
-            {
-                Server = An<IServer>(),
-                MessageHub = An<ITinyMessengerHub>(),
-            };
+            Establish context = () =>
+                {
+                    _sut = new StateManager {
+                        Server = (_server = An<IServer>()),
+                        MessageHub = An<ITinyMessengerHub>(),
+                    };
+                    _sut.Server.WhenToldTo(s => s.RegisterDevice(Moq.It.IsAny<DeviceRegistration>())).Return((DeviceRegistration d) => d);
+                };
 
             Cleanup cleanup = () =>
             {
@@ -35,6 +38,7 @@ namespace usnapus.core.specs.Core
                                  "usnapus.sqlite"));
             };
 
+            static IServer _server;
         }
 
         public class when_calling_current : StateManagerSpecification
@@ -50,14 +54,17 @@ namespace usnapus.core.specs.Core
      
         public class when_registration_is_updated_with_existing_registration : StateManagerSpecification
         {
-            Establish context = () => _sut.CurrentDeviceRegistration = new DeviceRegistration
-            {
-                Name = null,
-                Email = null,
-                FacebookId = null,
-                Id = 1,
-                Guid = _guid
-            };
+            Establish context = () =>
+                {
+                    _sut.CurrentDeviceRegistration = new DeviceRegistration {
+                        Name = null,
+                        Email = null,
+                        FacebookId = null,
+                        InternalId = 1,
+                        Guid = _guid
+                    };
+                    
+                };
             Because of = () => _sut.UpdateDeviceRegistration( _name, _email,_facebookId);
             It should_update_current_registration_name = () => _sut.CurrentDeviceRegistration.Name.ShouldEqual(_name);
             It should_update_current_registration_email = () => _sut.CurrentDeviceRegistration.Email.ShouldEqual(_email);
@@ -74,7 +81,6 @@ namespace usnapus.core.specs.Core
         {
             Establish context = () =>
             {
-                _sut.Server.WhenToldTo(s => s.RegisterDevice(Moq.It.IsAny<DeviceRegistration>())).Return((DeviceRegistration r) => r);
                 _sut.CurrentDeviceRegistration = null;
             };
             Because of = () => _sut.UpdateDeviceRegistration(_name, _email,_facebookId);
