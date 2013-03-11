@@ -6,33 +6,31 @@
 var express = require('express')
   , routes = require('./routes')
   , http = require('http')
-  , path = require('path');
+  , path = require('path')
+  , fs = require('fs')
+  , passport = require ("passport");
+
+// Load configurations
+var env = process.env.NODE_ENV || 'development'
+  , config = require('./config/config')[env]
+  , mongoose = require('mongoose')
+  , auth = require('./config/middleware/authorisation')
+
+// Bootstrap db connection
+mongoose.connect(config.db)
+
+// Bootstrap models
+var models_path = __dirname + '/models'
+fs.readdirSync(models_path).forEach(function (file) {
+  require(models_path+'/'+file)
+})
 
 var app = express();
 
-app.configure(function(){
-  app.set('port', process.env.PORT || 3000);
-  app.set('views', __dirname + '/views');
-  app.set('view engine', 'jade');
-  app.use(express.favicon());
-  app.use(express.logger('dev'));
-  app.use(express.bodyParser());
-  app.use(express.methodOverride());
-  app.use(express.cookieParser('your secret here'));
-  app.use(express.session());
-  app.use(app.router);
-  app.use(require('stylus').middleware(__dirname + '/public'));
-  app.use(express.static(path.join(__dirname, 'public')));
-});
+require('./config/express')(app, config, passport)
+require('./config/routes')(app, passport, auth)
 
-app.configure('development', function(){
-  app.use(express.errorHandler());
-});
-
-
-
-app.post('/device', routes.device.update);
-
-http.createServer(app).listen(app.get('port'), function(){
-  console.log("Express server listening on port " + app.get('port'));
+var port = process.env.PORT || 3000
+http.createServer(app).listen(port, function(){
+  console.log("Express server listening on port " + port);
 });
