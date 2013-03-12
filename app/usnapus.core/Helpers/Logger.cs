@@ -1,6 +1,4 @@
 using System;
-using Mindscape.Raygun4Net;
-using Mindscape.Raygun4Net.Messages;
 using uSnapUs.Core.Contracts;
 
 namespace uSnapUs.Core.Helpers
@@ -21,14 +19,14 @@ namespace uSnapUs.Core.Helpers
     }
     public class RaygunLogger:ILogger
     {
-        readonly RaygunClient _client = new RaygunClient("3mYw/8cjL9ZOq04NeW0RCg==");
+        //readonly RaygunClient _client = new RaygunClient("3mYw/8cjL9ZOq04NeW0RCg==");
         public void Trace(string message)
         {
          }
 
         public void Exception(Exception e)
         {
-          _client.SendInBackground(e);
+          //_client.SendInBackground(e);
         }
     }
     public class NullLogger:ILogger
