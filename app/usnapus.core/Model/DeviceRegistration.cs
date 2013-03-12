@@ -1,15 +1,11 @@
-using System;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using RestSharp.Serializers;
 
 namespace uSnapUs.Core.Model
 {
-    [DataContract]
     public class DeviceRegistration
     {
         [PrimaryKey,AutoIncrement]
-        [JsonIgnore()]
+        [JsonIgnore]
         public int InternalId{get;set;}
 
         [JsonProperty(PropertyName = "name")]

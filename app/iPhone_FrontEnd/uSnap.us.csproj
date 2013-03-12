@@ -89,8 +89,14 @@
     <CodesignProvision>Automatic:AppStore</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Mindscape.Raygun4Net">
+      <HintPath>..\packages\Mindscape.Raygun4Net.1.0.3\lib\net35\Mindscape.Raygun4Net.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.104.1\lib\net4\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
@@ -112,8 +118,81 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\uSnapUs.Core\AsyncWebClient.cs">
+      <Link>Core\AsyncWebClient.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="..\uSnapUs.Core\AuthorisationHandler.cs">
       <Link>Core\AuthorisationHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\uSnapUs.Core\Contracts\ILocationManager.cs">
+      <Link>Core\Contracts\ILocationManager.cs</Link>
+    </Compile>
+    <Compile Include="..\uSnapUs.Core\Contracts\ILogger.cs">
+      <Link>Core\Contracts\ILogger.cs</Link>
+    </Compile>
+    <Compile Include="..\uSnapUs.Core\Contracts\IRestClientFactory.cs">
+      <Link>Core\Contracts\IRestClientFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\uSnapUs.Core\Contracts\IServer.cs">
+      <Link>Core\Contracts\IServer.cs</Link>
+    </Compile>
+    <Compile Include="..\uSnapUs.Core\Contracts\IStateManager.cs">
+      <Link>Core\Contracts\IStateManager.cs</Link>
+    </Compile>
+    <Compile Include="..\uSnapUs.Core\Exceptions\ApiException.cs">
+      <Link>Core\Exceptions\ApiException.cs</Link>
+    </Compile>
+    <Compile Include="..\uSnapUs.Core\Exceptions\ValidationException.cs">
+      <Link>Core\Exceptions\ValidationException.cs</Link>
+    </Compile>
+    <Compile Include="..\uSnapUs.Core\Helpers\APIAuthenticator.cs">
+      <Link>Core\Helpers\APIAuthenticator.cs</Link>
+    </Compile>
+    <Compile Include="..\uSnapUs.Core\Helpers\ControllableDateTime.cs">
+      <Link>Core\Helpers\ControllableDateTime.cs</Link>
+    </Compile>
+    <Compile Include="..\uSnapUs.Core\Helpers\Coordinate.cs">
+      <Link>Core\Helpers\Coordinate.cs</Link>
+    </Compile>
+    <Compile Include="..\uSnapUs.Core\Helpers\Logger.cs">
+      <Link>Core\Helpers\Logger.cs</Link>
+    </Compile>
+    <Compile Include="..\uSnapUs.Core\Helpers\RestWrappers.cs">
+      <Link>Core\Helpers\RestWrappers.cs</Link>
+    </Compile>
+    <Compile Include="..\uSnapUs.Core\Helpers\TinyIOC.cs">
+      <Link>Core\Helpers\TinyIOC.cs</Link>
+    </Compile>
+    <Compile Include="..\uSnapUs.Core\Helpers\TinyMessenger.cs">
+      <Link>Core\Helpers\TinyMessenger.cs</Link>
+    </Compile>
+    <Compile Include="..\uSnapUs.Core\Messages\CancelUploadMessage.cs">
+      <Link>Core\Messages\CancelUploadMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\uSnapUs.Core\Messages\PhotoCreatedMessage.cs">
+      <Link>Core\Messages\PhotoCreatedMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\uSnapUs.Core\Messages\PhotoUploadFinishedMessage.cs">
+      <Link>Core\Messages\PhotoUploadFinishedMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\uSnapUs.Core\Messages\PhotoUploadProgressedMessage.cs">
+      <Link>Core\Messages\PhotoUploadProgressedMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\uSnapUs.Core\Model\CurrentEvent.cs">
+      <Link>Core\Model\CurrentEvent.cs</Link>
+    </Compile>
+    <Compile Include="..\uSnapUs.Core\Model\DeviceRegistration.cs">
+      <Link>Core\Model\DeviceRegistration.cs</Link>
+    </Compile>
+    <Compile Include="..\uSnapUs.Core\Model\Event.cs">
+      <Link>Core\Model\Event.cs</Link>
+    </Compile>
+    <Compile Include="..\uSnapUs.Core\Model\Photo.cs">
+      <Link>Core\Model\Photo.cs</Link>
+    </Compile>
+    <Compile Include="..\uSnapUs.Core\Model\SQLLite.cs">
+      <Link>Core\Model\SQLLite.cs</Link>
     </Compile>
     <Compile Include="..\uSnapUs.Core\Presenters\IBaseViewController.cs">
       <Link>Core\Presenters\IBaseViewController.cs</Link>
@@ -121,8 +200,14 @@
     <Compile Include="..\uSnapUs.Core\Presenters\ILandingViewController.cs">
       <Link>Core\Presenters\ILandingViewController.cs</Link>
     </Compile>
+    <Compile Include="..\uSnapUs.Core\Server.cs">
+      <Link>Core\Server.cs</Link>
+    </Compile>
     <Compile Include="..\uSnapUs.Core\SimpleJson.cs">
       <Link>Core\SimpleJson.cs</Link>
+    </Compile>
+    <Compile Include="..\uSnapUs.Core\StateManager.cs">
+      <Link>Core\StateManager.cs</Link>
     </Compile>
     <Compile Include="..\uSnapUs.Core\Supervisors\LandingViewControllerSupervisor.cs">
       <Link>Core\Supervisor\LandingViewControllerSupervisor.cs</Link>

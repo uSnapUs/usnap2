@@ -1,15 +1,16 @@
 ﻿// ReSharper disable InconsistentNaming
 
+using System;
 using System.Collections.Generic;
 using System.Net;
 using Machine.Fakes;
 using Machine.Fakes.Adapters.Moq;
 using Machine.Specifications;
 using RestSharp;
-using System.Linq;
 using TinyMessenger;
 using uSnapUs.Core;
 using uSnapUs.Core.Contracts;
+using uSnapUs.Core.Exceptions;
 using uSnapUs.Core.Helpers;
 using uSnapUs.Core.Model;
 
@@ -36,7 +37,7 @@ namespace usnapus.core.specs.Core
                     _restRequest.WhenToldTo(request=>request.Parameters).Return(_params);
                     _restClient.WhenToldTo(client => client.Execute<DeviceRegistration>(_restRequest)).Return(_restResponse);
 
-                    _sut = new Server(An<ITinyMessengerHub>()) {
+                    _sut = new Server(An<ITinyMessengerHub>(),new NullLogger()) {
 
                         RestClientFactory = _restClientFactory,
                         BaseUrl = _baseUrl
@@ -58,10 +59,10 @@ namespace usnapus.core.specs.Core
 
             Establish context = () =>
             {
-                _baseUrl = "http://10.0.1.9:3000/";
+                _baseUrl = "http://api.stage.isnap.us";
               
 
-                _sut = new Server(An<ITinyMessengerHub>())
+                _sut = new Server(An<ITinyMessengerHub>(),new NullLogger())
                 {
                     RestClientFactory = new RestClientFactory(),
                     BaseUrl = _baseUrl
@@ -116,7 +117,22 @@ namespace usnapus.core.specs.Core
 
             static DeviceRegistration _result;
         }
+        public class integration_when_registering_an_invalid_device:IntegrationServerSpecification
+        {
+            Because of = () => _exception = Catch.Exception(()=>_sut.RegisterDevice(_deviceRegistration));
 
+            It should_throw_an_error = () => _exception.ShouldNotBeNull();
+            It should_throw_a_validation_exception = () => _exception.ShouldBeOfType<ApiException>();
+
+            static DeviceRegistration _deviceRegistration = new DeviceRegistration
+            {
+
+                Guid = "0F0F187A-9AD5-461A-BB56-810BFEF41553",
+
+            };
+
+            static Exception _exception;
+        }
     }
 }
 

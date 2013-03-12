@@ -1,17 +1,11 @@
-using System;
-using System.Collections.Specialized;
-using System.IO;
 using System.Net;
-using System.Runtime.Serialization.Json;
-using System.Text;
 using Newtonsoft.Json;
 using RestSharp;
-using System.Collections.Generic;
 using RestSharp.Serializers;
 using TinyMessenger;
 using uSnapUs.Core.Contracts;
+using uSnapUs.Core.Exceptions;
 using uSnapUs.Core.Helpers;
-using uSnapUs.Core.Messages;
 using uSnapUs.Core.Model;
 
 namespace uSnapUs.Core
@@ -19,10 +13,12 @@ namespace uSnapUs.Core
     public class Server:IServer
     {
         readonly ITinyMessengerHub _messengerHub;
+        readonly ILogger _logger;
 
-        public Server(ITinyMessengerHub messengerHub)
+        public Server(ITinyMessengerHub messengerHub,ILogger logger)
         {
             _messengerHub = messengerHub;
+            _logger = logger;
         }
 
         public string BaseUrl = "http://192.168.0.110:3000/";
@@ -42,12 +38,14 @@ namespace uSnapUs.Core
             {
                 return response.Data;
             }
-            return null;
+            var exception = new ApiException(response.Content);
+            _logger.Exception(exception);
+            throw exception;
         }
 
         IRestClient GetClient()
         {
-            Logger.Trace("enter");
+            
             return RestClientFactory.CreateClient(BaseUrl);
         }
 
@@ -67,17 +65,17 @@ namespace uSnapUs.Core
     {
         public string Serialize(object obj)
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(obj);
+            return JsonConvert.SerializeObject(obj);
         }
 
         public string RootElement { get; set; }
         public string Namespace { get; set; }
         public string DateFormat { get; set; }
-        public string ContentType { get { return "application/json"; }
-            set
-            {
-                
-            }
+
+        public string ContentType
+        {
+            get { return "application/json"; }
+            set { }
         }
     }
 }

@@ -35,6 +35,9 @@
     <Reference Include="Facebook">
       <HintPath>..\lib\Facebook.dll</HintPath>
     </Reference>
+    <Reference Include="Mindscape.Raygun4Net">
+      <HintPath>..\packages\Mindscape.Raygun4Net.1.0.3\lib\net35\Mindscape.Raygun4Net.dll</HintPath>
+    </Reference>
     <Reference Include="monotouch">
       <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoTouch\v4.0\monotouch.dll</HintPath>
     </Reference>
@@ -52,16 +55,22 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="TestFlight">
+      <HintPath>..\lib\TestFlight.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\ApiException.cs" />
     <Compile Include="AsyncWebClient.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="AuthorisationHandler.cs" />
     <Compile Include="Contracts\ILocationManager.cs" />
+    <Compile Include="Contracts\ILogger.cs" />
     <Compile Include="Contracts\IRestClientFactory.cs" />
     <Compile Include="Contracts\IServer.cs" />
     <Compile Include="Contracts\IStateManager.cs" />
+    <Compile Include="Exceptions\ValidationException.cs" />
     <Compile Include="Helpers\APIAuthenticator.cs" />
     <Compile Include="Helpers\ControllableDateTime.cs" />
     <Compile Include="Helpers\Coordinate.cs" />

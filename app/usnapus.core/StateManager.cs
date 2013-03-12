@@ -1,11 +1,8 @@
-using System.Collections.Generic;
 using System.IO;
-using RestSharp;
 using TinyMessenger;
 using System;
 using uSnapUs.Core.Contracts;
 using uSnapUs.Core.Helpers;
-using uSnapUs.Core.Messages;
 using uSnapUs.Core.Model;
 
 namespace uSnapUs.Core
@@ -16,7 +13,6 @@ namespace uSnapUs.Core
 
         public StateManager()
         {
-            Logger.Trace("enter");
             var dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal),"usnapus.sqlite");
             lock (_dbLock)
             {
@@ -26,37 +22,33 @@ namespace uSnapUs.Core
                 }
                 DoMigrations(Db);
             }
-            
-       
-            Logger.Trace("exit");
         }
         
        
         DeviceRegistration _currentDeviceRegistration;
         public DeviceRegistration CurrentDeviceRegistration {
             set {
-                lock (_dbLock) {
-                Logger.Trace("enter");
-                    
-                if (_currentDeviceRegistration != null) {
-                    Db.Delete (_currentDeviceRegistration);
-                }
-                if (value != null)
+                lock (_dbLock)
                 {
-                    Db.Insert(value);
-                }
+
+                    if (_currentDeviceRegistration != null)
+                    {
+                        Db.Delete(_currentDeviceRegistration);
+                    }
+                    if (value != null)
+                    {
+                        Db.Insert(value);
+                    }
                     _currentDeviceRegistration = value;
-                Logger.Trace("exit");
+
                 }
             }
             get {
-                Logger.Trace("enter");
                 return _currentDeviceRegistration;
             }
         }
         void RegisterDevice (string deviceName)
         {
-            Logger.Trace("enter");
             var deviceRegistrationDetails = Db.Find<DeviceRegistration> (reg => true);
             if (deviceRegistrationDetails == null)
             {
@@ -69,18 +61,15 @@ namespace uSnapUs.Core
             }
             else
                 _currentDeviceRegistration = deviceRegistrationDetails;
-            Logger.Trace("exit");
         }
 
         void DoMigrations(SQLiteConnection db)
         {
-            Logger.Trace("enter");
             db.CreateTable<DeviceRegistration>();
             db.CreateTable<Event>();
             db.CreateTable<CurrentEvent>();
             //db.DeleteAll<CurrentEvent>();
             db.CreateTable<Photo>();
-            Logger.Trace("exit");
         }
 
         static IStateManager _stateManager;
@@ -94,10 +83,8 @@ namespace uSnapUs.Core
         IServer _server;
         readonly object _dbLock = new object();
         internal static SQLiteConnection Db;
-        Event _currentEvent;
         static ITinyMessengerHub _messageHub;
-        TinyMessageSubscriptionToken _photoUploadProgressSubscription;
-        TinyMessageSubscriptionToken _photoUploadCompleteSubscription;
+        ILogger _logger;
 
         public ITinyMessengerHub MessageHub
         {
@@ -106,10 +93,16 @@ namespace uSnapUs.Core
         }
 
         public IServer Server {
-            get { return _server ?? (_server = new Server(MessageHub)); }
+            get { return _server ?? (_server = new Server(MessageHub,Logger)); }
             internal set {
                 _server = value;
             }
+        }
+
+        protected ILogger Logger
+        {
+            get { return _logger ?? (_logger = new RaygunLogger()); }
+            set { _logger = value; }
         }
 
 
@@ -120,9 +113,7 @@ namespace uSnapUs.Core
         public string DeviceName
         {
             set { 
-                Logger.Trace("enter");
                 RegisterDevice(value);
-                Logger.Trace("exit");
             }
         }
 
@@ -133,7 +124,6 @@ namespace uSnapUs.Core
         public void UpdateDeviceRegistration(string name, string email,string facebookId)
         {
 
-            Logger.Trace("enter");
             if (_currentDeviceRegistration != null)
             {
                 lock (_dbLock)
